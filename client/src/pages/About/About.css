@@ -1,0 +1,30 @@
+.parent_about {
+    /* background-color: yellow; */
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.parent_about_div {
+    width: 65%;
+    margin: auto;
+    display: flex;
+    background-color: aliceblue;
+    padding: 10px;
+    align-items: center;
+    margin-top: 50px;
+}
+
+
+.parent_text {
+    width: 50%;
+    margin: 10px;
+}
+
+.parent_text p{
+    text-align: justify;
+}
+
+.parent_img {
+    width: 50%;
+    margin: 10px;
+}

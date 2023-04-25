@@ -1,0 +1,58 @@
+.enquiry_parent {
+    width: 65%;
+    margin: auto;
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.enquiry_field {
+    background-color: aliceblue;
+    margin: 10px;
+    padding: 10px;
+}
+
+.enquiry_field span {
+    font-weight: bold;
+}
+
+/* .input_enquiry_field {
+    background-color: pink;
+} */
+
+.input_enquiry_field input {
+    padding: 10px;
+    border: 1px solid aliceblue;
+    margin: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.input_enquiry_field button {
+    background-color: blue;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+
+.table_hours {
+    background-color: aliceblue;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.table_hours table {
+    border: 1px solid gray;
+    padding: 10px;
+}
+
+.table_hours tr, th, td{
+    border: 1px solid gray;
+    padding: 10px;
+}

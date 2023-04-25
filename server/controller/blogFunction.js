@@ -1,0 +1,70 @@
+const BlogModel = require('../models/blogModel.js');
+
+const BlogGetFun = async (req, res) => {
+
+    try {
+
+        // BlogModel.find({}, async function (err, result) {
+        //     if (err) {
+        //         return res.status(401).json({ error: "Cannot find any blog data" });
+        //     } else {
+        //         res.status(200).send({
+        //             status: 'Success',
+        //             data: allUsers,
+        //         })
+        //     }
+        // });
+
+
+        const blogData = await BlogModel.find();
+        res.status(200).send(blogData);
+
+    } catch (error) {
+        console.log("Error while getting the blog Data" + error);
+    }
+
+}
+
+
+const BlogPostFun = async (req, res) => {
+
+    try {
+
+        const { blogTitle, blogImage, blogPerson, blogDescription } = req.body;
+
+        if (!blogTitle || !blogImage || !blogPerson || !blogDescription) {
+            return res.status(401).json({ message: "Please fill all the fields" });
+        }
+
+        const Title = await BlogModel.findOne({ blogTitle: blogTitle });
+
+        if (Title) {
+            return res.status(401).json({ message: "This blog Already exits" });
+        }
+
+        const newBlog = new BlogModel({
+            blogTitle,
+            blogImage,
+            blogPerson,
+            blogDescription
+        });
+
+
+        const blogData = await newBlog.save();
+
+        console.log(blogData);
+
+        if (blogData) {
+            res.status(200).json({ message: "Blog Data Saved Successfully" });
+        } else {
+            res.status(402).json({ error: "Blog Data did not saved." });
+        }
+
+    } catch (error) {
+
+    }
+
+
+}
+
+module.exports = { BlogGetFun, BlogPostFun };

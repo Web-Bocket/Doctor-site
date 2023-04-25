@@ -1,0 +1,54 @@
+.parent_contact {
+    width: 65%;
+    /* background-color: yellow; */
+    margin: auto;
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.text_contact {
+    width: 40%;
+    /* background-color: pink; */
+    margin: 20px;
+}
+
+.map_contact {
+    display: flex;
+    align-self: center;
+    width: 60%;
+    /* background-color: green; */
+    flex-direction: column;
+    margin: 20px;
+}
+
+.map_contact iframe{
+    height: 500px;
+    border: 5px solid lightblue;
+    margin-top: 10px;
+    border-radius: 20px 0px 20px 0px;
+}
+
+.contact_number_div {
+    background-color: lightblue;
+    color: black;
+    padding: 30px;
+    margin-top: 10px;
+    border-radius: 20px 0px 20px 0px;
+}
+
+.contact_number_div p {
+    line-height: 1.4;
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+
+.link_div {
+    display: flex;
+    flex-direction: column;
+}
+
+.link_div i {
+    line-height: 0.5;
+}

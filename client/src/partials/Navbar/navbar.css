@@ -1,0 +1,45 @@
+.navbar {
+  padding: 30px;
+}
+
+.navbar-parent {
+  background-color: pink;
+  padding: 30px;
+}
+
+.navbar-brand {
+  color: red;
+}
+
+.model_body input {
+  padding: 20px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  margin: 5px;
+  width: 100%;
+}
+
+.navbar_textarea {
+  margin: 5px;
+  padding: 20px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.model_body button {
+  padding: 10px;
+  margin: 5px;
+  width: 100%;
+}
+
+.input_radio {
+  border: 2px solid gray;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}

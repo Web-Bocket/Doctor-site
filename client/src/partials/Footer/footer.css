@@ -1,0 +1,42 @@
+/* This is for the Footer  */
+footer {
+    background-color: #00072d;
+    padding: 10px;
+    padding-top: 30px;
+    font-family: 'Dongle', sans-serif;
+    color: #b2bec8;
+    line-height: 0.8;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer div{
+    width: 100%;
+    /* background-color: yellow; */
+    /* text-align: justify; */
+}
+
+.navlink_text {
+    text-decoration: none;
+    color: white;
+}
+
+.navlink_fix {
+    text-decoration: none;
+    color: #58e3c4;
+    margin: 10px;
+}
+
+.fab {
+    padding: 10px;
+    color: #58e3c4;
+}
+
+.fab:hover {
+    color: blue;
+}
+
+.text-xs {
+    margin-top: 20px;
+}
