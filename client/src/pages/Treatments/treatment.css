@@ -1,0 +1,87 @@
+.treatment_parent {
+    /* background-color: yellow; */
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.treatment_one_div {
+    display: flex;
+    width: 65%;
+    margin: auto;
+    background-color: aliceblue;
+    padding: 20px;
+}
+
+.div_one_text {
+    width: 100%;
+    margin: 10px;
+    text-align: justify;
+}
+
+.div_one_img {
+    width: 100%;
+    display: flex;
+    align-self: center;
+    margin: 10px;
+}
+
+
+.treatment_two_div {
+    display: flex;
+    width: 65%;
+    margin: auto;
+    background-color: aliceblue;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+.treatment_three_div {
+    display: flex;
+    width: 65%;
+    margin: auto;
+    background-color: aliceblue;
+    padding: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.treatment_three_div p {
+    text-align: justify;
+}
+
+.treatment_three_div .tab_class{
+    margin-top: 30px;
+}
+
+.treatment_four_div {
+    display: flex;
+    width: 65%;
+    margin: auto;
+    background-color: aliceblue;
+    flex-direction: column;
+    padding: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.treatment_four_div p{
+    text-align: justify;
+    margin-top: 10px;
+}
+
+.text_img_div{
+    display: flex;
+    justify-content: space-between
+}
+
+.text_img_div p{
+    width: 65%;
+}
+
+.text_img_div img{
+    width: 25%;
+    margin-left: 20px;
+}
+

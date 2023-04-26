@@ -30,6 +30,8 @@
 .model_body button {
   padding: 10px;
   margin: 5px;
+  font-weight: bold;
+  border-radius: 10px;
   width: 100%;
 }
 

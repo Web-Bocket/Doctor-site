@@ -48,18 +48,18 @@ function MyVerticallyCenteredModal(props) {
             <Modal.Body className='model_body'>
 
                 <div>
-                    <input onChange={(e) => setYourName(e.target.value)} placeholder='Your Name *' />
-                    <input onChange={(e) => setYourCity(e.target.value)} placeholder="Your City" />
+                    <input required onChange={(e) => setYourName(e.target.value)} placeholder='Your Name *' />
+                    <input required onChange={(e) => setYourCity(e.target.value)} placeholder="Your City" />
                 </div>
                 <div>
-                    <input onChange={(e) => setYourEmail(e.target.value)} placeholder='Your Email *' />
-                    <input onChange={(e) => setDate(e.target.value)} type='date' />
+                    <input required onChange={(e) => setYourEmail(e.target.value)} placeholder='Your Email *' />
+                    <input required onChange={(e) => setDate(e.target.value)} type='date' />
                 </div>
                 <div>
-                    <input onChange={(e) => setYourPhone(e.target.value)} placeholder='Your-Phone No' />
+                    <input required onChange={(e) => setYourPhone(e.target.value)} placeholder='Your-Phone No' />
                     <label className='input_radio'>
                         Select Patient Type:
-                        <select value={patientStatus} onChange={(e) => setPatientStatus(e.target.value)}>
+                        <select required value={patientStatus} onChange={(e) => setPatientStatus(e.target.value)}>
                             <option value="">Select patient type</option>
                             <option value="Old">Old</option>
                             <option value="New">New</option>
@@ -69,14 +69,14 @@ function MyVerticallyCenteredModal(props) {
 
                 <label className='input_radio'>
                     Choose an option:
-                    <select value={gender} onChange={(e) => setGender(e.target.value)}>
+                    <select required value={gender} onChange={(e) => setGender(e.target.value)}>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
 
                     </select>
                 </label>
 
-                <textarea className='navbar_textarea' onChange={(e) => setMessage(e.target.value)} rows="4" placeholder='Your Message' />
+                <textarea required className='navbar_textarea' onChange={(e) => setMessage(e.target.value)} rows="4" placeholder='Your Message' />
                 <Button onClick={handleSubmit}>Send</Button>
 
             </Modal.Body>

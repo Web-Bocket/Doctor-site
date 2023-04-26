@@ -1,21 +1,20 @@
 const BlogModel = require('../models/blogModel.js');
 
+
+const BlogOneFun = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const blogData = await BlogModel.findById(id);
+        res.status(200).send(blogData);
+    } catch (error) {
+        console.log("Error while getting the blog Data" + error);
+    }
+}
+
 const BlogGetFun = async (req, res) => {
 
     try {
-
-        // BlogModel.find({}, async function (err, result) {
-        //     if (err) {
-        //         return res.status(401).json({ error: "Cannot find any blog data" });
-        //     } else {
-        //         res.status(200).send({
-        //             status: 'Success',
-        //             data: allUsers,
-        //         })
-        //     }
-        // });
-
-
         const blogData = await BlogModel.find();
         res.status(200).send(blogData);
 
@@ -67,4 +66,4 @@ const BlogPostFun = async (req, res) => {
 
 }
 
-module.exports = { BlogGetFun, BlogPostFun };
+module.exports = { BlogGetFun, BlogOneFun, BlogPostFun };
