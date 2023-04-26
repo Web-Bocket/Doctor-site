@@ -13,7 +13,7 @@ function BasicExample() {
     const [modalShow, setModalShow] = React.useState(false);
 
     return (
-        <Navbar fixed="top" className='navbar-parent' style={{ padding: "20px" }} bg="danger" variant="dark" expand="lg">
+        <Navbar  className='navbar-parent' style={{ padding: "20px" }} bg="danger" variant="dark" expand="lg">
             <Container>
                 <Navbar.Brand style={{ fontWeight: "bold" }} href="/">Medical Website</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
