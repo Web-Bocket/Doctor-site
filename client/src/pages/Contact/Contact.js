@@ -14,9 +14,18 @@ const Contact = () => {
         <div className='contact_number_div'>
           <p>Dr. Anubha's Homeopathy Clinic, H.No: 10-3-505, Vijayanagar Colony, Lane beside Andhra Bank, Masabtank, Hyderabad - 500057.</p>
           <div className='link_div'>
-            <p><i className="fas fa-phone"></i> +91-88017 09712</p>
-            <p><i className="fab fa-whatsapp"></i> +91-91778 71574</p>
-            <p><i className="fas fa-envelope"></i> info@dranubha.com</p>
+            <tr>
+              <td><i class="fas fa-phone-square-alt"></i></td>
+              <td>+91-88017 09712</td>
+            </tr>
+            <tr>
+              <td><i class="fab fa-whatsapp"></i></td>
+              <td>+91-91778 71574</td>
+            </tr>
+            <tr>
+              <td><i class="fas fa-mail-bulk"></i></td>
+              <td>info@dranubha.com</td>
+            </tr>
           </div>
         </div>
 

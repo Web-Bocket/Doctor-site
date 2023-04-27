@@ -28,7 +28,7 @@ const Blog = () => {
   return (
     <div className='blog_parent'>
       <div className='blog_parent_div'>
-        <h1>About us in Media</h1>
+        <h1>Checkout our blogs</h1>
         <div className='blog_div'>
 
           {/* {Array.isArray(blogs) && blogs.map(blog => (

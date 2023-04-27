@@ -4,7 +4,6 @@ import './enquiry.css';
 
 const Enquiry = () => {
 
-
   const [yourName, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -24,9 +23,7 @@ const Enquiry = () => {
       console.log({ Error: err.message });
     })
 
-
   }
-
 
 
   return (
@@ -39,17 +36,15 @@ const Enquiry = () => {
         <p>If you have any questions simply use the form below. We try and respond to all queries and comments.</p>
 
         <div className='input_enquiry_field'>
-          <div>
-            <input onChange={(e) => setName(e.target.value)} placeholder='Your Name*' />
-            <input onChange={(e) => setPhone(e.target.value)} placeholder='Phone' />
-          </div>
-          <div>
-            <input onChange={(e) => setEmail(e.target.value)} placeholder='Your Email*' />
-            <input onChange={(e) => setSubject(e.target.value)} placeholder='Subject/Problem' />
-          </div>
+
+          <input required onChange={(e) => setName(e.target.value)} placeholder='Your Name*' />
+          <input onChange={(e) => setPhone(e.target.value)} placeholder='Phone' />
+
+          <input onChange={(e) => setEmail(e.target.value)} placeholder='Your Email*' />
+          <textarea rows="4" onChange={(e) => setSubject(e.target.value)} placeholder='Subject/Problem' />
+
           <button onClick={handleSubmit}>SEND</button>
         </div>
-
 
       </div>
       <div className='table_hours'>

@@ -45,7 +45,7 @@ const Diabetes = () => {
                         className="mb-3 tab_class"
                         justify
                     >
-                        <Tab eventKey="home" title="Type-1 Diabetes">
+                        <Tab className='tab_color' eventKey="home" title="Type-1 Diabetes">
                             <p>The exact reason of getting type 1 diabetes is still not known. It is believed that our body’s immune system destroys the cells which produce insulin in pancreas, thus causing deficiency of insulin and deposition of glucose in bloodstream.</p>
                         </Tab>
                         <Tab eventKey="profile" title="Type-2 Diabetes">

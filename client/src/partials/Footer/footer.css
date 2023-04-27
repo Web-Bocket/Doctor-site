@@ -1,40 +1,42 @@
 /* This is for the Footer  */
 footer {
-    background-color: #00072d;
+    background-color: #583101;
     padding: 10px;
     padding-top: 30px;
     font-family: 'Dongle', sans-serif;
-    color: #b2bec8;
+    color: white;
     line-height: 0.8;
     padding-bottom: 50px;
     display: flex;
     justify-content: space-evenly;
 }
 
-footer div{
+footer div {
     width: 100%;
-    /* background-color: yellow; */
-    /* text-align: justify; */
 }
 
 .navlink_text {
     text-decoration: none;
-    color: white;
+    color: #d4a276;
 }
 
 .navlink_fix {
     text-decoration: none;
-    color: #58e3c4;
+    color: #d4a276;
     margin: 10px;
+}
+
+.navlink_fix:hover{
+    color: white;
 }
 
 .fab {
     padding: 10px;
-    color: #58e3c4;
+    color: #d4a276;
 }
 
 .fab:hover {
-    color: blue;
+    color: white;
 }
 
 .text-xs {

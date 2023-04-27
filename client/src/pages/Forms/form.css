@@ -1,19 +1,27 @@
-.form_parent{
-    margin: 50px;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+/* font-family: 'Noto Sans', sans-serif; */
+
+.form_parent {
+    margin: auto;
+    font-family: 'Noto Sans', sans-serif;
+    width: 75%;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
-.form_parent h1{
+.form_parent h1 {
     text-align: center;
 }
 
 .form_parent_down {
     width: 65%;
     margin: auto;
-    background-color: aliceblue;
+    background-color: #ffedd8;
     display: flex;
     padding: 20px;
     margin-top: 50px;
     margin-bottom: 50px;
+    border-radius: 20px 0px 20px 0px;
 }
 
 .form_div_one {
@@ -22,28 +30,50 @@
     display: flex;
     flex-direction: column;
     margin: 10px;
+    align-items: center;
+}
+
+.input_radio_form {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ffedd8;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
 }
 
 .form_div_one input {
+    width: 100%;
     padding: 10px;
     margin: 5px;
-    border: 1px solid gray;
+    border: 1px solid #ffedd8;
     border-radius: 10px;
 }
 
-.form_div_one textarea{
+.form_div_one textarea {
     margin: 5px;
-    border: 1px solid gray;
+    border: 1px solid #ffedd8;
     padding: 10px;
+    width: 100%;
     border-radius: 10px;
 }
 
-.form_div_one button{
+.form_div_one button {
     margin: 5px;
-    border: 1px solid gray;
+    border: 1px solid #583101;
+    background-color: #583101;
     padding: 10px;
+    width: 100%;
     border-radius: 10px;
     font-weight: bold;
+}
+
+.form_div_one button:hover {
+    background-color: #d4a276;
+    border: 1px solid #d4a276;
+    color: #583101;
 }
 
 .form_div_two {
@@ -55,8 +85,73 @@
     flex-direction: column;
 }
 
-.form_div_two p{
+.form_div_two img {
+    border-radius: 20px 0px 20px 0px;
+}
+
+.form_div_two p {
     margin-top: 50px;
     margin-bottom: 50px;
     text-align: center;
+}
+
+
+
+
+
+/* 1550 This is for the PC View */
+@media (max-width: 1550px) {}
+
+/* 1210 This is for the Table View */
+@media (max-width: 1210px) {
+
+
+    .form_parent {
+        margin: auto;
+        width: 80%;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form_parent_down {
+        width: 90%;
+        margin: auto;
+        background-color: #ffedd8;
+        display: flex;
+        padding: 20px;
+        margin-top: 20px;
+        align-items: center;
+        flex-direction: column;
+    }
+
+}
+
+/* 910 - This is for the Mobile View */
+@media (max-width: 910px) {
+
+
+    .form_parent {
+        margin: auto;
+        width: 95%;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form_parent_down {
+        width: 100%;
+        margin: auto;
+        background-color: #ffedd8;
+        display: flex;
+        padding: 20px;
+        margin-top: 20px;
+        align-items: center;
+        flex-direction: column;
+    }
+
 }

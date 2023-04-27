@@ -47,25 +47,22 @@ function MyVerticallyCenteredModal(props) {
             </Modal.Header>
             <Modal.Body className='model_body'>
 
-                <div>
+                
                     <input required onChange={(e) => setYourName(e.target.value)} placeholder='Your Name *' />
                     <input required onChange={(e) => setYourCity(e.target.value)} placeholder="Your City" />
-                </div>
-                <div>
                     <input required onChange={(e) => setYourEmail(e.target.value)} placeholder='Your Email *' />
                     <input required onChange={(e) => setDate(e.target.value)} type='date' />
-                </div>
-                <div>
+
                     <input required onChange={(e) => setYourPhone(e.target.value)} placeholder='Your-Phone No' />
                     <label className='input_radio'>
                         Select Patient Type:
                         <select required value={patientStatus} onChange={(e) => setPatientStatus(e.target.value)}>
-                            <option value="">Select patient type</option>
+                            {/* <option value="">Select patient type</option> */}
                             <option value="Old">Old</option>
                             <option value="New">New</option>
                         </select>
                     </label>
-                </div>
+                
 
                 <label className='input_radio'>
                     Choose an option:

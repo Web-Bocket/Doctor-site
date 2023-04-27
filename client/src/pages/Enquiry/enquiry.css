@@ -1,50 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+/* font-family: 'Noto Sans', sans-serif; */
+
+
 .enquiry_parent {
     width: 65%;
     margin: auto;
     display: flex;
     padding-top: 50px;
     padding-bottom: 50px;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .enquiry_field {
-    background-color: aliceblue;
+    background-color: #ffedd8;
     margin: 10px;
     padding: 10px;
+    border-radius: 20px 0px 20px 0px;
 }
 
 .enquiry_field span {
     font-weight: bold;
 }
 
-/* .input_enquiry_field {
-    background-color: pink;
-} */
+.input_enquiry_field {
+    margin: 10px;
+    padding: 10px;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
 
 .input_enquiry_field input {
     padding: 10px;
-    border: 1px solid aliceblue;
+    border: 1px solid #ffedd8;
     margin: 10px;
-    border: 1px solid gray;
+    border-radius: 10px;
+    width: 100%;
+}
+
+
+.input_enquiry_field textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ffedd8;
+    margin: 10px;
     border-radius: 10px;
 }
 
 .input_enquiry_field button {
-    background-color: blue;
+    background-color: #583101;
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
+    width: 100%;
     color: white;
     font-weight: bold;
 }
 
 
 .table_hours {
-    background-color: aliceblue;
+    background-color: #ffedd8;
     padding: 10px;
     margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-radius: 20px 0px 20px 0px;
 }
 
 .table_hours table {
@@ -52,7 +75,31 @@
     padding: 10px;
 }
 
-.table_hours tr, th, td{
+.table_hours tr,
+th,
+td {
     border: 1px solid gray;
     padding: 10px;
+}
+
+
+
+
+
+/* 1550 This is for the PC View */
+@media (max-width: 1550px) {}
+
+/* 1210 This is for the Table View */
+@media (max-width: 1210px) {}
+
+/* 910 - This is for the Mobile View */
+@media (max-width: 910px) {
+
+    .enquiry_parent {
+        width: 95%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
 }

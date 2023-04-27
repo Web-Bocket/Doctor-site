@@ -13,7 +13,7 @@ function BasicExample() {
     const [modalShow, setModalShow] = React.useState(false);
 
     return (
-        <Navbar  className='navbar-parent' style={{ padding: "20px" }} bg="danger" variant="dark" expand="lg">
+        <Navbar className='navbar-parent' style={{ padding: "20px" }} variant="dark" expand="lg">
             <Container>
                 <Navbar.Brand style={{ fontWeight: "bold" }} href="/">Medical Website</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -38,9 +38,10 @@ function BasicExample() {
                             <NavDropdown.Item href="/children">Children Diseases</NavDropdown.Item>
 
                         </NavDropdown>
-                        <NavDropdown style={{ fontWeight: "bold", color: "white" }} title="Online Consultation">
+                        <Nav.Link style={{ fontWeight: "bold" }} href="/form">Online Consultation</Nav.Link>
+                        {/* <NavDropdown style={{ fontWeight: "bold", color: "white" }} title="Online Consultation">
                             <NavDropdown.Item href="/form">Online Consultation Form Details</NavDropdown.Item>
-                        </NavDropdown>
+                        </NavDropdown> */}
                         <NavDropdown style={{ fontWeight: "bold" }} title="Gallery" id="basic-nav-dropdown">
                             <NavDropdown.Item href="/gallery">Media</NavDropdown.Item>
                             <NavDropdown.Item href="/video">Videos</NavDropdown.Item>
@@ -48,7 +49,7 @@ function BasicExample() {
                         <Nav.Link style={{ fontWeight: "bold" }} href="/blog">Blog</Nav.Link>
                         <Nav.Link style={{ fontWeight: "bold" }} href="/enquiry">Inquiry</Nav.Link>
                         <Nav.Link style={{ fontWeight: "bold" }} href="/contact">Contact us</Nav.Link>
-                        <Button style={{ backgroundColor: "white", marginLeft: "10px", fontWeight: "bold", color: "red", border: "2px solid white" }} onClick={() => setModalShow(true)}>Book Appointment</Button>
+                        <Button style={{ backgroundColor: "white", marginLeft: "10px", fontWeight: "bold", color: "black", border: "2px solid white" }} onClick={() => setModalShow(true)}>Book Appointment</Button>
 
 
                         <MyVerticallyCenteredModal

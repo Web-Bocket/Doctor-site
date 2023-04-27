@@ -46,12 +46,19 @@ const Form = () => {
             <h1>Fill Online Consultation Form</h1>
             <div className='form_parent_down'>
 
+
+                <div className='form_div_two'>
+                    <h1>Fill Form</h1>
+                    <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.</p>
+                    <img src='https://img.freepik.com/free-vector/flat-design-illustration-customer-support_23-2148887720.jpg' alt='contact img' />
+                </div>
+
                 <div className='form_div_one'>
                     <input type='text' onChange={(e) => setFirstName(e.target.value)} placeholder='Enter Your First Name' />
                     <input type='text' onChange={(e) => setLastName(e.target.value)} placeholder='Enter Your Last Name' />
                     <input type='text' onChange={(e) => setEmail(e.target.value)} placeholder='Enter Email ID' />
                     <input type='text' onChange={(e) => setPhone(e.target.value)} placeholder='Enter Phone/Mobild No.' />
-                    <label className='input_radio'>
+                    <label className='input_radio_form'>
                         Gender
                         <select value={gender} onChange={(e) => setGender(e.target.value)}>
                             <option value="Male">Male</option>
@@ -67,11 +74,7 @@ const Form = () => {
                     <Button onClick={handleSubmit}>Send Details</Button>
                 </div>
 
-                <div className='form_div_two'>
-                    <h1>Fill Form</h1>
-                <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.</p>
-                    <img src='https://img.freepik.com/free-vector/flat-design-illustration-customer-support_23-2148887720.jpg' alt='contact img' />
-                </div>
+
 
             </div>
 

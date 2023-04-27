@@ -4,6 +4,7 @@ import Accordion from './components/Accordion.js';
 import './home.css';
 import { Button } from '@chakra-ui/react';
 import TestimonialSection from './components/Testimonial.js';
+import { NavLink } from 'react-router-dom';
 
 
 const home = () => {
@@ -13,7 +14,6 @@ const home = () => {
 
 
       <div className='parent_home'>
-
 
 
         <div className='homeopathy_text'>
@@ -39,109 +39,29 @@ const home = () => {
       <div className='card_center_two'>
         <div className='card_center_two_text'>
 
+          <div>
+            <h1>What is Homeopathy</h1>
+            <p>It is believed that homeopathy treatment is slow. But in many diseases like diarrhea, minor infection, and fever it acts faster than other treatments. In chronic diseases like diabetes, blood pressure, etc, homeopathy</p>
+            <Button><NavLink to="/about"> Read more</NavLink></Button>
+          </div>
 
           <div>
             <h1>What is Homeopathy</h1>
             <p>It is believed that homeopathy treatment is slow. But in many diseases like diarrhea, minor infection, and fever it acts faster than other treatments. In chronic diseases like diabetes, blood pressure, etc, homeopathy</p>
-            <Button>Read More</Button>
-          </div>
-
-          <div>
-            <h1>What is Homeopathy</h1>
-            <p>It is believed that homeopathy treatment is slow. But in many diseases like diarrhea, minor infection, and fever it acts faster than other treatments. In chronic diseases like diabetes, blood pressure, etc, homeopathy</p>
-            <Button>Read More</Button>
+            <Button><NavLink to="/about"> Read more</NavLink></Button>
           </div>
 
 
           <div>
             <h1>What is Homeopathy</h1>
             <p>It is believed that homeopathy treatment is slow. But in many diseases like diarrhea, minor infection, and fever it acts faster than other treatments. In chronic diseases like diabetes, blood pressure, etc, homeopathy</p>
-            <Button>Read More</Button>
-          </div>
-
-
-
-        </div>
-
-      </div>
-
-
-      <div className='parent_home_two' >
-        <h1>OUR TREATMENT</h1>
-        <div className='parent_home_two_child row row-cols-1 row-cols-md-4 g-4'>
-
-          <div className='col'>
-            <div className='parent_home_two_div'>
-              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/diabetes-cure1.jpg' alt='deases img' />
-              <p>Diabetes</p>
-            </div>
-          </div>
-
-
-          <div className='col'>
-            <div className='parent_home_two_div'>
-              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/diabetes-cure1.jpg' alt='deases img' />
-              <p>Diabetes</p>
-            </div>
-          </div>
-
-
-          <div className='col'>
-            <div className='parent_home_two_div'>
-              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/diabetes-cure1.jpg' alt='deases img' />
-              <p>Diabetes</p>
-            </div>
-          </div>
-
-
-          <div className='col'>
-            <div className='parent_home_two_div'>
-              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/diabetes-cure1.jpg' alt='deases img' />
-              <p>Diabetes</p>
-            </div>
-          </div>
-
-
-          <div className='col'>
-            <div className='parent_home_two_div'>
-              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/diabetes-cure1.jpg' alt='deases img' />
-              <p>Diabetes</p>
-            </div>
-          </div>
-
-
-          <div className='col'>
-            <div className='parent_home_two_div'>
-              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/diabetes-cure1.jpg' alt='deases img' />
-              <p>Diabetes</p>
-            </div>
-          </div>
-
-
-          <div className='col'>
-            <div className='parent_home_two_div'>
-              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/diabetes-cure1.jpg' alt='deases img' />
-              <p>Diabetes</p>
-            </div>
-          </div>
-
-
-          <div className='col'>
-            <div className='parent_home_two_div'>
-              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/diabetes-cure1.jpg' alt='deases img' />
-              <p>Diabetes</p>
-            </div>
-          </div>
-
-          <div className='col'>
-            <div className='parent_home_two_div'>
-              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/diabetes-cure1.jpg' alt='deases img' />
-              <p>Diabetes</p>
-            </div>
+            <Button><NavLink to="/about"> Read more</NavLink></Button>
           </div>
 
         </div>
       </div>
+
+
 
       <div className='card_center_four'>
         <div className='card_center_four_text'>
@@ -156,13 +76,136 @@ const home = () => {
 
       </div>
 
-      <div className='card_center_three'>
-        <div className='card_center_three_text'>
 
-          <TestimonialSection />
+
+      <div className='parent_home_two' >
+        <h1>OUR TREATMENT</h1>
+        <div className='parent_home_two_child row row-cols-1 row-cols-md-4 g-4'>
+
+          <div className='col'>
+            <div className='parent_home_two_div'>
+              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/diabetes-cure1.jpg' alt='deases img' />
+              <p><NavLink to="/diabetes">Diabetes</NavLink></p>
+            </div>
+          </div>
+
+
+          <div className='col'>
+            <div className='parent_home_two_div'>
+              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/thyroid-1.jpg' alt='deases img' />
+              <p><NavLink to="/thyroid">Thyroid</NavLink></p>
+            </div>
+          </div>
+
+
+          <div className='col'>
+            <div className='parent_home_two_div'>
+              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/womens-health-2.jpg' alt='deases img' />
+              <p><NavLink to="/women">Woman's Health</NavLink></p>
+            </div>
+          </div>
+
+
+          <div className='col'>
+            <div className='parent_home_two_div'>
+              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/arthritis.jpg' alt='deases img' />
+              <p><NavLink to="/arthritits">Arthritis</NavLink></p>
+            </div>
+          </div>
+
+
+          <div className='col'>
+            <div className='parent_home_two_div'>
+              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/infertility.jpg' alt='deases img' />
+              <p><NavLink to="/infertility">Infertility</NavLink></p>
+            </div>
+          </div>
+
+
+          <div className='col'>
+            <div className='parent_home_two_div'>
+              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/sinusitis.jpg' alt='deases img' />
+              <p><NavLink to="/sinusitis">Sinusitis</NavLink></p>
+            </div>
+          </div>
+
+
+          <div className='col'>
+            <div className='parent_home_two_div'>
+              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/hypertension.jpg' alt='deases img' />
+              <p><NavLink to="/hypertension">Hypertension</NavLink></p>
+            </div>
+          </div>
+
+
+          <div className='col'>
+            <div className='parent_home_two_div'>
+              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/skin.jpg' alt='deases img' />
+              <p><NavLink to="/skin">Skin</NavLink></p>
+            </div>
+          </div>
+
+          <div className='col'>
+            <div className='parent_home_two_div'>
+              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/hair.jpg' alt='deases img' />
+              <p><NavLink to="/hair">Hair</NavLink></p>
+            </div>
+          </div>
+
+          <div className='col'>
+            <div className='parent_home_two_div'>
+              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/allergy.jpg' alt='deases img' />
+              <p><NavLink to="/allergy">Allergy</NavLink></p>
+            </div>
+          </div>
+
+          <div className='col'>
+            <div className='parent_home_two_div'>
+              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/hypertension.jpg' alt='deases img' />
+              <p><NavLink to="/asthma">Asthma</NavLink></p>
+            </div>
+          </div>
+
+          <div className='col'>
+            <div className='parent_home_two_div'>
+              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/maigraine.jpg' alt='deases img' />
+              <p><NavLink to="/migraine">Migraine</NavLink></p>
+            </div>
+          </div>
+
+          <div className='col'>
+            <div className='parent_home_two_div'>
+              <img src='https://www.dranubha.com/wp-content/uploads/2017/05/spondylitis.jpg' alt='deases img' />
+              <p><NavLink to="/spondylitis">Spondylitis</NavLink></p>
+            </div>
+          </div>
+
+          <div className='col'>
+            <div className='parent_home_two_div'>
+              <img src='https://www.dranubha.com/wp-content/uploads/2016/04/children-diseases.jpg' alt='deases img' />
+              <p><NavLink to="/children">Children Diseases</NavLink></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div className='card_center_five'>
+        <div className='card_center_five_text'>
+
+          <h1>COMPLETE HOMEOPATHIC</h1>
+          <p>Using Homeopathic Treatments, you and your family can benefit from improved health since homeopathic medicines activate the self-regulatory mechanism of the body that helps you treat all kinds of ailments & diseases. It also strengthens your immunity while optimizing your bodily functioning.</p>
 
         </div>
 
+      </div>
+
+
+      <div className='card_center_three'>
+        <div className='card_center_three_text'>
+          <TestimonialSection />
+        </div>
       </div>
 
 
@@ -172,8 +215,6 @@ const home = () => {
           <h1>FAQs</h1>
           <Accordion />
         </div>
-
-
       </div>
 
 

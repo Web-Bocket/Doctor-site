@@ -6,9 +6,27 @@ black - 221e22
 orange - fa7921 */
 
 
+/* This is the New Blue Color base
+1. 023e8a
+2. 0077b6
+3. 48cae4
+
+This is the New Brown Color base 
+1. 583101
+2. 603808
+3. d4a276 
+4. ffedd8*/
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+/* font-family: 'Noto Sans', sans-serif; */
+
+
+
+
 
 .home {
     /* background-color: pink; */
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .parent_home {
@@ -34,7 +52,7 @@ orange - fa7921 */
 .homeopathy_text {
     text-align: center;
     padding: 30px;
-    background-color: blue;
+    background-color: #583101;
     border-radius: 0px 20px 0px 20px;
     color: white;
 }
@@ -42,7 +60,7 @@ orange - fa7921 */
 
 .text_medicine {
     display: flex;
-    margin-top: 50px;
+    margin-top: 100px;
     margin-bottom: 50px;
     /* background-color: pink; */
     justify-content: space-between;
@@ -66,7 +84,7 @@ orange - fa7921 */
     align-self: center;
 }
 
-.text_medicine_img img{
+.text_medicine_img img {
     border-radius: 0px 20px 0px 20px;
 }
 
@@ -111,8 +129,8 @@ orange - fa7921 */
     width: 300px;
     padding: 10px;
     margin: 5px;
-    background-color: aliceblue;
-    border-bottom: 8px solid skyblue;
+    background-color: #d4a276;
+    border-bottom: 8px solid #583101;
     border-radius: 10px;
     text-align: center;
 }
@@ -139,10 +157,10 @@ orange - fa7921 */
 }
 
 .card_center_two {
-    background-color: aliceblue;
+    /* background-color: #ffedd8; */
     color: black;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -157,8 +175,8 @@ orange - fa7921 */
     margin: 10px;
     padding: 10px;
     text-align: center;
-    background-color: pink;
-    border-bottom: 8px solid red;
+    background-color: #d4a276;
+    border-bottom: 8px solid #583101;
     border-radius: 5px;
 }
 
@@ -218,7 +236,7 @@ h5 {
 
 
 .card_center_four {
-    background-color: aliceblue;
+    background-color: #ffedd8;
     margin-top: 40px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -231,8 +249,24 @@ h5 {
     color: black;
 }
 
+
+
+.card_center_five {
+    background-color: #ffedd8;
+    margin-top: 100px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.card_center_five_text {
+    width: 45%;
+    margin: auto;
+    color: black;
+}
+
 .parent_home_five {
-    background-color: aliceblue;
+    background-color: #ffedd8;
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -241,7 +275,6 @@ h5 {
     max-width: 65vw;
     margin: auto;
 }
-
 
 
 
@@ -279,4 +312,256 @@ h5 {
     border-radius: 500px;
     border: 5px solid white;
     margin-bottom: 20px;
+}
+
+
+.carosusel_parent {
+    height: 70vh;
+}
+
+.carosusel_img {
+    height: 70vh;
+    object-fit: cover;
+}
+
+
+
+.text_div_carosusel_one {
+    background-color: #583101;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 20px 0px 20px 0px;
+}
+
+.text_div_carosusel_two {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.text_div_carosusel_three h2 {
+    font-weight: bold;
+    text-align: center;
+    background-color: black;
+    padding: 20px;
+    border-radius: 20px 0px 20px 0px;
+}
+
+.text_div_carosusel_five {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.text_div_carosusel_six {
+    background-color: black;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+    margin: auto;
+    border-radius: 20px 0px 20px 0px;
+}
+
+
+
+/* 1550 This is for the PC View */
+@media (max-width: 1550px) {}
+
+/* 1210 This is for the Table View */
+@media (max-width: 1210px) {
+
+    .parent_home_two {
+        max-width: 90vw;
+        margin: auto;
+        margin-top: 40px;
+        /* background-color: pink; */
+    }
+
+    .parent_home_two_div {
+        width: auto;
+        padding: 10px;
+        margin: 5px;
+        background-color: #d4a276;
+        border-bottom: 8px solid #583101;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+
+    .card_center_five_text {
+        width: 80%;
+    }
+
+    .card_center_three_text {
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .card_center_two_text {
+        display: flex;
+        width: 65%;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .card_center_two {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+
+}
+
+/* 910 - This is for the Mobile View */
+@media (max-width: 910px) {
+
+    .parent_home {
+        /* background-color: yellow; */
+        max-width: 95vw;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    .homeopathy_text {
+        text-align: center;
+        padding: 20px;
+        background-color: #583101;
+        border-radius: 0px 20px 0px 20px;
+        color: white;
+    }
+
+    .text_medicine {
+        flex-direction: column;
+    }
+
+    .text_medicine_text {
+        width: 100%;
+    }
+
+
+    .text_medicine_img {
+        width: 100%;
+    }
+
+
+
+    .card_center_two_text {
+        display: flex;
+        width: 95%;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .card_center_two {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+
+    .card_center_four {
+        background-color: #ffedd8;
+        margin-top: 20px;
+    }
+
+    .card_center_four_text {
+        width: 90%;
+    }
+
+
+    .parent_home_two {
+        max-width: 95vw;
+        margin: auto;
+        margin-top: 40px;
+        /* background-color: pink; */
+    }
+
+    .parent_home_two_div {
+        width: auto;
+    }
+
+
+
+    .card_center_five {
+        margin-top: 50px;
+    }
+
+    .card_center_five_text {
+        width: 85%;
+    }
+
+
+    .card_center_three {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .card_center_three_text {
+        width: 95%;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+
+    .parent_home_five {
+        background-color: #ffedd8;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .parent_home_five_div {
+        max-width: 95vw;
+        margin: auto;
+    }
+
+
+    .carosusel_parent {
+        height: 30vh;
+    }
+
+    .carosusel_img {
+        height: 30vh;
+        object-fit: cover;
+    }
+
+
+
+
+    .text_div_carosusel_one {
+        font-size: small;
+        padding: 10px;
+        font-weight: 500;
+        border-radius: 10px 0px 10px 0px;
+    }
+
+    .text_div_carosusel_two {
+        font-size: small;
+        font-weight: bold;
+    }
+
+    .text_div_carosusel_three h2 {
+        padding: 10px;
+        font-size: large;
+        border-radius: 10px 0px 10px 0px;
+    }
+
+
+    .text_div_carosusel_five {
+        font-size: larger;
+    }
+
+    .text_div_carosusel_six {
+        background-color: black;
+        font-size: small;
+        padding: 10px;
+        font-weight: 500;
+        border-radius: 10px 0px 10px 0px;
+    }
+
+
 }

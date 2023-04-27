@@ -1,9 +1,11 @@
 .navbar {
   padding: 30px;
+  color: white;
 }
 
 .navbar-parent {
-  background-color: pink;
+  background-color: #583101;
+  color: white;
   padding: 30px;
 }
 
@@ -11,9 +13,18 @@
   color: red;
 }
 
+.model_body {
+  /* background-color: yellow; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0px 0px 10px 10px;
+}
+
 .model_body input {
+  background-color: #ffedd8;
   padding: 20px;
-  border: 1px solid gray;
+  border: 1px solid none;
   border-radius: 10px;
   margin: 5px;
   width: 100%;
@@ -22,7 +33,8 @@
 .navbar_textarea {
   margin: 5px;
   padding: 20px;
-  border: 1px solid gray;
+  border: 1px solid none;
+  background-color: #ffedd8;
   border-radius: 10px;
   width: 100%;
 }
@@ -33,10 +45,19 @@
   font-weight: bold;
   border-radius: 10px;
   width: 100%;
+  background-color: #583101;
+  border: 1px solid #583101;
+}
+
+.model_body button:hover {
+  background-color: #d4a276;
+  border: 1px solid #d4a276;
+  color: #583101;
 }
 
 .input_radio {
-  border: 2px solid gray;
+  border: 1px solid none;
+  background-color: #ffedd8;
   padding: 10px;
   border-radius: 10px;
   margin: 5px;
