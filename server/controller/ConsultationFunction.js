@@ -15,7 +15,7 @@ const PostConsultFunction = async (req, res) => {
         // Checking if the User has entered the correct phone number.
         const phoneRegex = /^[0-9]{10}$/;
         if (!phoneRegex.test(phone)) {
-            return res.status(401).json({ error: "Please enter a valid phone number" });
+            return res.status(402).json({ error: "Please enter a valid phone number" });
         }
 
         const consultation = new ConsultationModel({
@@ -37,7 +37,7 @@ const PostConsultFunction = async (req, res) => {
         if (consultationData) {
             res.status(200).json({ message: "Consultation Data Saved Successfully" });
         } else {
-            res.status(402).json({ error: "Consultation Data did not saved." });
+            res.status(403).json({ error: "Consultation Data did not saved." });
         }
 
     } catch (error) {
