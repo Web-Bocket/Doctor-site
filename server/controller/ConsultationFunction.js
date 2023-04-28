@@ -7,7 +7,6 @@ const PostConsultFunction = async (req, res) => {
 
         const { firstName, lastName, email, phone, gender, age, address, city, state, country, problem } = req.body;
 
-
         if (!firstName || !lastName || !email || !phone || !gender || !age || !address || !city || !state || !country || !problem) {
             return res.status(401).json({ message: "Please fill all the fields" });
         }
@@ -43,7 +42,30 @@ const PostConsultFunction = async (req, res) => {
     } catch (error) {
 
     }
-
 }
 
-module.exports = PostConsultFunction;
+
+const ConsultationGetFun = async (req, res) => {
+
+    try {
+        const ConsultationData = await ConsultationModel.find();
+        res.status(200).send(ConsultationData);
+
+    } catch (error) {
+        console.log("Error while getting the Consultation Data" + error);
+    }
+}
+
+
+const ConsultationDeleteFun = async (req, res) => {
+    try {
+        const ConsultationId = req.params.id;
+        const deletedConsult = await ConsultationModel.findByIdAndDelete(ConsultationId);
+        res.status(200).send("Consultation data deleted successfully");
+    } catch (error) {
+        console.log("Error while deleting the Consultation okk " + error);
+        res.status(500).send("Error while deleting the Consultation");
+    }
+};
+
+module.exports = { PostConsultFunction, ConsultationGetFun, ConsultationDeleteFun };

@@ -62,8 +62,19 @@ const BlogPostFun = async (req, res) => {
     } catch (error) {
 
     }
-
-
 }
 
-module.exports = { BlogGetFun, BlogOneFun, BlogPostFun };
+
+
+const BlogDeleteFun = async (req, res) => {
+    try {
+        const blogId = req.params.id;
+        const deletedBlog = await BlogModel.findByIdAndDelete(blogId);
+        res.status(200).send("Blog deleted successfully");
+    } catch (error) {
+        console.log("Error while deleting the blog" + error);
+        res.status(500).send("Error while deleting the blog");
+    }
+};
+
+module.exports = { BlogGetFun, BlogOneFun, BlogPostFun, BlogDeleteFun };

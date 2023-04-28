@@ -2,7 +2,6 @@ const AppointmentModel = require('../models/AppointmentModel');
 
 
 const AppointmentPostFun = async (req, res) => {
-
     try {
 
         const { name, email, city, date, phone, gender, patientStatus, message } = req.body;
@@ -28,7 +27,6 @@ const AppointmentPostFun = async (req, res) => {
             message
         });
 
-
         const AppointmentData = await newAppointment.save();
 
         if (AppointmentData) {
@@ -40,8 +38,30 @@ const AppointmentPostFun = async (req, res) => {
     } catch (error) {
 
     }
-
-
 }
 
-module.exports = AppointmentPostFun;
+
+const AppointmentGetFun = async (req, res) => {
+
+    try {
+        const AppointmentData = await AppointmentModel.find();
+        res.status(200).send(AppointmentData);
+
+    } catch (error) {
+        console.log("Error while getting the Appointment Data" + error);
+    }
+}
+
+
+const AppointmentDeleteFun = async (req, res) => {
+    try {
+        const appointmentId = req.params.id;
+        const deletedAppointment = await AppointmentModel.findByIdAndDelete(appointmentId);
+        res.status(200).send("Appointment deleted successfully");
+    } catch (error) {
+        console.log("Error while deleting the Appointment" + error);
+        res.status(500).send("Error while deleting the Appointment");
+    }
+};
+
+module.exports = { AppointmentPostFun, AppointmentGetFun, AppointmentDeleteFun };

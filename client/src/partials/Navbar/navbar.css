@@ -19,10 +19,11 @@
   flex-direction: column;
   align-items: center;
   border-radius: 0px 0px 10px 10px;
+  background-color: #ffedd8;
 }
 
 .model_body input {
-  background-color: #ffedd8;
+  background-color: white;
   padding: 20px;
   border: 1px solid none;
   border-radius: 10px;
@@ -34,7 +35,7 @@
   margin: 5px;
   padding: 20px;
   border: 1px solid none;
-  background-color: #ffedd8;
+  background-color: white;
   border-radius: 10px;
   width: 100%;
 }
@@ -57,7 +58,7 @@
 
 .input_radio {
   border: 1px solid none;
-  background-color: #ffedd8;
+  background-color: white;
   padding: 10px;
   border-radius: 10px;
   margin: 5px;

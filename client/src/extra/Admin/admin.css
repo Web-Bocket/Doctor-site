@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+/* font-family: 'Noto Sans', sans-serif; */
+
+
+.tab_parent {
+    /* background-color: yellow; */
+    padding: 30px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+
+.right_tab {
+    background-color: #ffedd8;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 12px 20px rgb(0, 0, 0, 0.2);
+}
+
+.nav_link_tab{
+    color: #583101;
+}
+
+.left_tab Button {
+    background-color: #583101;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #583101;
+}
+
+.appointment_one_data {
+    background-color: #ffedd8;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 12px 20px rgb(0, 0, 0, 0.2);
+}
+
+
+.blog_post_div {
+    background-color: #ffedd8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 12px 20px rgb(0, 0, 0, 0.2);
+}
+
+.blog_input_div {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog_input_div input {
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.blog_input_div textarea {
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.blog_input_div Button {
+    padding: 10px;
+    margin: 10px;
+    background-color: #583101;
+    border: 2px solid #583101;
+}

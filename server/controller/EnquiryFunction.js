@@ -30,8 +30,31 @@ const EnquiryPostFun = async (req, res) => {
     } else {
         res.status(402).json({ error: "Enquiry Data did not saved." });
     }
-
-
 }
 
-module.exports = EnquiryPostFun;
+
+const EnquiryGetFun = async (req, res) => {
+
+    try {
+        const EnquiryData = await EnquiryModel.find();
+        res.status(200).send(EnquiryData);
+
+    } catch (error) {
+        console.log("Error while getting the Enquiry Data" + error);
+    }
+}
+
+
+
+const EnquiryDeleteFun = async (req, res) => {
+    try {
+        const enquiryId = req.params.id;
+        const deletedEnquiry = await EnquiryModel.findByIdAndDelete(enquiryId);
+        res.status(200).send("Enquiry deleted successfully");
+    } catch (error) {
+        console.log("Error while deleting the Enquiry" + error);
+        res.status(500).send("Error while deleting the Enquiry");
+    }
+};
+
+module.exports = { EnquiryPostFun, EnquiryGetFun, EnquiryDeleteFun };
