@@ -3,8 +3,13 @@ import Button from 'react-bootstrap/esm/Button';
 import axios from 'axios';
 import './form.css';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
+
 const Form = () => {
 
+    const navigate = useNavigate();
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -20,27 +25,67 @@ const Form = () => {
     const handleSubmit = () => {
 
         if (!firstName || !lastName || !gender || !address || !city || !state || !country || !problem) {
-            window.alert("Please fill in all required fields.");
+            // window.alert("Please fill in all required fields.");
+            toast.info('Please fill all the fields', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
             return;
         }
 
         // Check if email address is valid
         const emailPattern = /\S+@\S+\.\S+/;
         if (!emailPattern.test(email)) {
-            window.alert("Please enter a valid email address.");
+            // window.alert("Please enter a valid email address.");
+            toast.info('Please enter a valid email address', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
             return;
         }
 
         // Phone validation
         const phoneValidatoin = /^\d{10}$/;
         if (!phoneValidatoin.test(phone)) {
-            window.alert("Please enter the correct phone number")
+            toast.info('Please enter the correct phone number without +91', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+            // window.alert("Please enter the correct phone number")
             return;
         }
 
         // Age validation
         if (age && (age < 1 || age > 100)) {
-            alert("Please enter a valid age (between 1 and 100)");
+            toast.info('Please enter a valid age (between 1 to 100', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+            // alert("Please enter a valid age (between 1 and 100)");
             return;
         }
 
@@ -57,7 +102,8 @@ const Form = () => {
             country,
             problem
         }).then(() => {
-            window.alert("Form Submitted Successfully");
+            // window.alert("Form Submitted Successfully");
+            navigate('/thanks');
             console.log("Form Submitted Successfully");
         }).catch((err) => {
             console.log("Error Occured " + err.message);
@@ -100,7 +146,7 @@ const Form = () => {
 
 
             </div>
-
+            <ToastContainer />
         </div>
     )
 }

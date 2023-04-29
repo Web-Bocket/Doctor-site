@@ -30,45 +30,49 @@ import BlogData from "../pages/Blog/BlogData";
 import Admin from "../extra/Admin/Admin";
 
 import PageNot from "../errors/pageNot";
+import Thanks from "../extra/Thanks/Thanks";
 
 const routes = () => {
     return (
-        
-            <Router>
-                <Navbar />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path='/about' element={<About />} />
-                    <Route path="/blog" element={<Blog />} />
-                    <Route path="/gallery" element={<Gallery />} />
-                    <Route path="/video" element={<Video />} />
-                    <Route path="/enquiry" element={<Enquiry />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/form" element={<Form />} />
 
-                    <Route path="/blog/:id" element={<BlogData />} />
+        <Router>
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path='/about' element={<About />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/video" element={<Video />} />
+                <Route path="/enquiry" element={<Enquiry />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/form" element={<Form />} />
 
-                    <Route path="/diabetes" element={<Diabetes />} />
-                    <Route path="/thyroid" element={<Thyroid />} />
-                    <Route path="/women" element={<Women />} />
-                    <Route path="/arthritits" element={<Arthritits />} />
-                    <Route path="/infertility" element={<Infertility />} />
-                    <Route path="/sinusitis" element={<Sinusitis />} />
-                    <Route path="/hypertension" element={<Hypertension />} />
-                    <Route path="/skin" element={<Skin />} />
-                    <Route path="/hair" element={<Hair />} />
-                    <Route path="/allergy" element={<Allergy />} />
-                    <Route path="/asthma" element={<Asthma />} />
-                    <Route path="/migraine" element={<Migraine />} />
-                    <Route path="/spondylitis" element={<Spondylitis />} />
-                    <Route path="/children" element={<Children />} />
+                <Route path="/blog/:id" element={<BlogData />} />
 
-                    <Route path="/admin" element={<Admin />} />
+                <Route path="/diabetes" element={<Diabetes />} />
+                <Route path="/thyroid" element={<Thyroid />} />
+                <Route path="/women" element={<Women />} />
+                <Route path="/arthritits" element={<Arthritits />} />
+                <Route path="/infertility" element={<Infertility />} />
+                <Route path="/sinusitis" element={<Sinusitis />} />
+                <Route path="/hypertension" element={<Hypertension />} />
+                <Route path="/skin" element={<Skin />} />
+                <Route path="/hair" element={<Hair />} />
+                <Route path="/allergy" element={<Allergy />} />
+                <Route path="/asthma" element={<Asthma />} />
+                <Route path="/migraine" element={<Migraine />} />
+                <Route path="/spondylitis" element={<Spondylitis />} />
+                <Route path="/children" element={<Children />} />
 
-                    <Route path="/*" element={<PageNot />} />
-                </Routes>
-                <Footer />
-            </Router>
+                <Route path="/admin" element={<Admin />} />
+
+                <Route path="/thanks" element={<Thanks />} />
+                <Route path="/*" element={<PageNot />} />
+
+
+            </Routes>
+            <Footer />
+        </Router>
 
     )
 }

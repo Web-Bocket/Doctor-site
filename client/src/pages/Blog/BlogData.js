@@ -25,7 +25,7 @@ const BlogData = () => {
 
         <h1>{blog.blogTitle}</h1>
         <div>
-          <p>Date : </p>
+          {/* <p>Date : </p> */}
           <p>Posted by : {blog.blogPerson}</p>
         </div>
 

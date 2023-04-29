@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './enquiry.css';
+import { Navigate, useNavigate } from 'react-router-dom';
+
 
 const Enquiry = () => {
+  const navigate = useNavigate();
   const [yourName, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -57,6 +60,7 @@ const Enquiry = () => {
           problem,
         })
         .then(() => {
+          navigate('/thanks');
           console.log("Message Send Successfully");
         })
         .catch((err) => {

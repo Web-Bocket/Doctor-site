@@ -10,6 +10,7 @@ import MyVerticallyCenteredModal from './components/model';
 
 function BasicExample() {
 
+
     const [modalShow, setModalShow] = React.useState(false);
 
     return (
@@ -36,7 +37,6 @@ function BasicExample() {
                             <NavDropdown.Item href="/migraine">Migraine</NavDropdown.Item>
                             <NavDropdown.Item href="/spondylitis">Spondylitis</NavDropdown.Item>
                             <NavDropdown.Item href="/children">Children Diseases</NavDropdown.Item>
-
                         </NavDropdown>
                         <Nav.Link style={{ fontWeight: "bold" }} href="/form">Online Consultation</Nav.Link>
                         {/* <NavDropdown style={{ fontWeight: "bold", color: "white" }} title="Online Consultation">
@@ -51,13 +51,11 @@ function BasicExample() {
                         <Nav.Link style={{ fontWeight: "bold" }} href="/contact">Contact us</Nav.Link>
                         <Button style={{ backgroundColor: "white", marginLeft: "10px", fontWeight: "bold", color: "black", border: "2px solid white" }} onClick={() => setModalShow(true)}>Book Appointment</Button>
 
-
+                        
                         <MyVerticallyCenteredModal
                             show={modalShow}
                             onHide={() => setModalShow(false)}
                         />
-
-
                     </Nav>
                 </Navbar.Collapse>
             </Container>
