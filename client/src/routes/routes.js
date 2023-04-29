@@ -27,16 +27,13 @@ import Spondylitis from '../pages/Treatments/components/Spondylitis';
 import Children from '../pages/Treatments/components/children';
 import BlogData from "../pages/Blog/BlogData";
 
-
 import Admin from "../extra/Admin/Admin";
 
 import PageNot from "../errors/pageNot";
 
-
 const routes = () => {
     return (
         
-
             <Router>
                 <Navbar />
                 <Routes>
@@ -66,7 +63,6 @@ const routes = () => {
                     <Route path="/spondylitis" element={<Spondylitis />} />
                     <Route path="/children" element={<Children />} />
 
-
                     <Route path="/admin" element={<Admin />} />
 
                     <Route path="/*" element={<PageNot />} />
@@ -74,7 +70,6 @@ const routes = () => {
                 <Footer />
             </Router>
 
-      
     )
 }
 
