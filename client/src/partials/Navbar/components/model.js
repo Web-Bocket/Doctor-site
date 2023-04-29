@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function MyVerticallyCenteredModal(props) {
-
     const [name, setYourName] = useState("");
     const [city, setYourCity] = useState("");
     const [email, setYourEmail] = useState("");
@@ -17,9 +15,19 @@ function MyVerticallyCenteredModal(props) {
     const [patientStatus, setPatientStatus] = useState("");
     const [gender, setGender] = useState("");
 
+    const handleClearFields = () => {
+        setYourName("");
+        setYourCity("");
+        setYourEmail("");
+        setDate("");
+        setYourPhone("");
+        setMessage("");
+        setPatientStatus("");
+        setGender("");
+    };
+
 
     const handleSubmit = () => {
-
         // Check if all required fields are filled
         if (!name || !email || !date || !message || !patientStatus || !gender) {
             // window.alert("Please fill in all required fields.");
@@ -84,12 +92,24 @@ function MyVerticallyCenteredModal(props) {
             patientStatus,
             gender,
         }).then(() => {
-            window.alert("Appointment Book Successfully");
+            handleClearFields();
+            toast.success('Appointment Booked Successfully', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+            // window.alert("Appointment Book Successfully");
             console.log("Appointment Book Successfully");
         }).catch((err) => {
             console.log("Error Occured " + err.message);
         })
     }
+
 
     return (
         <Modal
@@ -103,11 +123,11 @@ function MyVerticallyCenteredModal(props) {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body className='model_body'>
-                <input required onChange={(e) => setYourName(e.target.value)} placeholder='Your Name *' />
-                <input required onChange={(e) => setYourCity(e.target.value)} placeholder="Your City" />
-                <input required onChange={(e) => setYourEmail(e.target.value)} placeholder='Your Email *' />
-                <input required onChange={(e) => setDate(e.target.value)} type='date' />
-                <input required onChange={(e) => setYourPhone(e.target.value)} placeholder='Your-Phone No' />
+                <input required value={name} onChange={(e) => setYourName(e.target.value)} placeholder='Your Name *' />
+                <input required value={city} onChange={(e) => setYourCity(e.target.value)} placeholder="Your City" />
+                <input required value={email} onChange={(e) => setYourEmail(e.target.value)} placeholder='Your Email *' />
+                <input required value={date} onChange={(e) => setDate(e.target.value)} type='date' />
+                <input required value={phone} onChange={(e) => setYourPhone(e.target.value)} placeholder='Your-Phone No' />
                 <label className='input_radio'>
                     Select Patient Type:
                     <select required value={patientStatus} onChange={(e) => setPatientStatus(e.target.value)}>
@@ -126,12 +146,14 @@ function MyVerticallyCenteredModal(props) {
                     </select>
                 </label>
 
-                <textarea required className='navbar_textarea' onChange={(e) => setMessage(e.target.value)} rows="4" placeholder='Your Message' />
+                <textarea value={message} required className='navbar_textarea' onChange={(e) => setMessage(e.target.value)} rows="4" placeholder='Your Message' />
                 <Button onClick={handleSubmit}>Send</Button>
             </Modal.Body>
             <ToastContainer />
         </Modal>
     );
+
+
 }
 export default MyVerticallyCenteredModal;
 
