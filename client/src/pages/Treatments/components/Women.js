@@ -32,10 +32,8 @@ const Women = () => {
             <li>Pelvic pain</li>
             <li>Infertility</li>
           </ul>
-
         </div>
       </div>
-
 
       <div className='treatment_three_div'>
         <div>

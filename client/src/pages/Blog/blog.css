@@ -13,7 +13,22 @@
     width: 65%;
     margin-top: 50px;
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     /* background-color: green; */
+}
+
+.blog_parent_div h1{
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+}
+
+.blog_parent_div hr{
+    width: 50%;
+    border-top: 3px solid #583101;
 }
 
 .blog_div {
@@ -24,16 +39,22 @@
 .blog_div button {
     background-color: #583101;
     border: 1px solid #583101;
+    font-size: small;
 }
 
 .one_blog_div {
     background-color: #d4a276;
-    padding: 10px;
+    padding: 5px;
     width: 300px;
     margin: 10px;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px;
     border-bottom: 5px solid #583101;
+}
+
+.one_blog_div h2{
+    margin-top: 5px;
+    font-size: 1em
 }
 
 .one_blog_div img {

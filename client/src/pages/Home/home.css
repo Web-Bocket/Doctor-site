@@ -311,6 +311,8 @@ h5 {
 }
 
 
+
+/* This is for the Carosusel  */
 .carosusel_parent {
     height: 70vh;
 }
@@ -320,10 +322,8 @@ h5 {
     object-fit: cover;
 }
 
-
-
 .text_div_carosusel_one {
-    background-color: #583101;
+    /* background-color: #583101; */
     color: white;
     font-size: 1.2rem;
     padding: 10px;
@@ -332,22 +332,85 @@ h5 {
     border-radius: 20px 0px 20px 0px;
 }
 
+.text_div_carosusel_one h1 {
+    font-weight: 1000;
+    font-size: 2.5em;
+}
+
+.text_div_carosusel_one p {
+    color: white;
+    font-size: 1.2em;
+}
+
+
 .text_div_carosusel_two {
     font-size: larger;
-    font-weight: bold;
+    color: white;
+    /* background-color: white; */
+}
+
+.text_div_carosusel_two h2 {
+    font-weight: 900;
+    font-size: 2em;
+}
+
+.text_div_carosusel_two h4 {
+    font-size: 1.8em;
+}
+
+.text_div_carosusel_three {
+    font-size: larger;
+    color: #583101;
+    /* background-color: white; */
 }
 
 .text_div_carosusel_three h2 {
-    font-weight: bold;
+    font-weight: 900;
+    font-size: 2em;
+}
+
+.text_div_carosusel_three h4 {
+    font-size: 1.8em;
+}
+
+
+.text_div_carosusel_four {
+    /* background-color: #583101; */
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
     text-align: center;
-    background-color: black;
-    padding: 20px;
+    font-weight: bold;
     border-radius: 20px 0px 20px 0px;
 }
+
+.text_div_carosusel_four h1 {
+    font-weight: 1000;
+    font-size: 2.5em;
+}
+
+.text_div_carosusel_four p {
+    color: white;
+    font-size: 1.2em;
+}
+
+
 
 .text_div_carosusel_five {
     font-size: larger;
     font-weight: bold;
+    text-align: end;
+}
+
+.text_div_carosusel_five h4 {
+    font-size: 1.5em;
+    color: white;
+}
+
+.text_div_carosusel_five h2 {
+    font-size: 2.5em;
+    font-weight: 800;
+    color: white;
 }
 
 .text_div_carosusel_six {
@@ -517,44 +580,70 @@ h5 {
 
 
     .carosusel_parent {
-        height: 30vh;
+        height: 40vh;
     }
 
     .carosusel_img {
-        height: 30vh;
+        height: 40vh;
         object-fit: cover;
     }
 
-    .text_div_carosusel_one {
-        font-size: small;
-        padding: 10px;
-        font-weight: 500;
-        border-radius: 10px 0px 10px 0px;
+    
+    .text_div_carosusel_one h1 {
+        font-weight: 1000;
+        font-size: 1.5em;
     }
-
-    .text_div_carosusel_two {
-        font-size: small;
-        font-weight: bold;
+    
+    .text_div_carosusel_one p {
+        font-size: 0.7em;
     }
-
+    
+    
+    
+    .text_div_carosusel_two h2 {
+        font-weight: 900;
+        font-size: 0.8em;
+    }
+    
+    .text_div_carosusel_two h4 {
+        font-size: 0.8em;
+    }
+  
+    
     .text_div_carosusel_three h2 {
-        padding: 10px;
-        font-size: large;
-        border-radius: 10px 0px 10px 0px;
+        font-weight: 700;
+        font-size: 0.8em;
+    }
+    
+    .text_div_carosusel_three h4 {
+        font-size: 0.8em;
+        font-weight: 900;
+    }
+    
+    
+    .text_div_carosusel_four h1 {
+        font-weight: 1000;
+        font-size: 1.5em;
+    }
+    
+    .text_div_carosusel_four p {
+        color: white;
+        font-size: 0.7em;
+    }
+    
+    
+    .text_div_carosusel_five h4 {
+        font-size: 0.8em;
+        color: white;
+    }
+    
+    .text_div_carosusel_five h2 {
+        font-size: 1.5em;
+        font-weight: 800;
+        color: white;
     }
 
-
-    .text_div_carosusel_five {
-        font-size: larger;
-    }
-
-    .text_div_carosusel_six {
-        background-color: black;
-        font-size: small;
-        padding: 10px;
-        font-weight: 500;
-        border-radius: 10px 0px 10px 0px;
-    }
+    
 
 
 }

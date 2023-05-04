@@ -14,6 +14,18 @@
     margin-top: 50px;
     margin-bottom: 50px;
     /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery_parent_div h1 {
+    font-weight: bold;
+}
+
+.gallery_parent_div hr {
+    width: 30%;
+    border: 2px solid #583101;
 }
 
 .gallery_div {
@@ -23,17 +35,21 @@
 
 .one_gallery_div {
     background-color: #d4a276;
-    padding: 10px;
+    padding: 5px;
     margin: 10px;
     text-align: center;
-    border-radius: 10px;
-    border-bottom: 5px solid #583101;
+    border-radius: 5px;
+    border-bottom: 2px solid #583101;
 }
 
 .one_gallery_div img {
     width: 100%;
 }
 
+.one_gallery_div h4 {
+    font-size: small;
+    margin-top: 5px;
+}
 
 .video_parent {
     /* background-color: pink; */

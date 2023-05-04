@@ -29,6 +29,7 @@ const Blog = () => {
     <div className='blog_parent'>
       <div className='blog_parent_div'>
         <h1>Checkout our blogs</h1>
+        <hr></hr>
         <div className='blog_div'>
 
           {/* {Array.isArray(blogs) && blogs.map(blog => (
@@ -44,7 +45,7 @@ const Blog = () => {
             <div className='one_blog_div' key={blog._id}>
               <img src={blog.blogImage} />
               <h2>{blog.blogTitle}</h2>
-              <p>{blog.blogPerson}</p>
+              {/* <p>By : {blog.blogPerson}</p> */}
               <Button onClick={() => handleReadMoreClick(blog._id)}>Read More</Button>
             </div>
           ))}

@@ -6,6 +6,7 @@ const Gallery = () => {
     <div className='gallery_parent'>
       <div className='gallery_parent_div'>
         <h1>About us in Media</h1>
+        <hr></hr>
         <div className='gallery_div'>
           <div className='one_gallery_div'>
             <img src='https://mlpaqee2k6dz.i.optimole.com/w:auto/h:auto/q:mauto/f:avif/https://www.brandsnbehind.com/wp-content/uploads/2021/03/newspaper-advertisement.jpg' alt='ads img' />

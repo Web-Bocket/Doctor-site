@@ -12,7 +12,7 @@ const Admin = () => {
     const [consultations, setConsultation] = useState([]);
     const [enquirys, setEnquiryData] = useState([]);
     const [blogs, setBlogData] = useState([]);
-
+    
 
     // This is for the Blog Post
     const [blogTitle, setBlogTitle] = useState("");

@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
-
 const BlogData = () => {
 
   const { id } = useParams();
   const [blog, setBlog] = useState({});
-
 
   useEffect(() => {
     axios.get(`http://localhost:5000/blog/${id}`)
@@ -32,8 +30,6 @@ const BlogData = () => {
         <img src={blog.blogImage} alt='blog img' />
         <p>{blog.blogDescription}</p>
       </div>
-
-
 
     </div>
   )

@@ -64,7 +64,7 @@ const routes = () => {
                 <Route path="/spondylitis" element={<Spondylitis />} />
                 <Route path="/children" element={<Children />} />
 
-                <Route path="/admin" element={<Admin />} />
+                <Route path="/admin/u=admin123&p=admin123" element={<Admin />} />
 
                 <Route path="/thanks" element={<Thanks />} />
                 <Route path="/*" element={<PageNot />} />
