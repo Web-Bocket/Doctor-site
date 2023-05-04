@@ -116,6 +116,17 @@ This is the New Brown Color base
     /* background-color: pink; */
 }
 
+.parent_home_two h1{
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.parent_home_two hr{
+    border: 2px solid black;
+    width: 30%;
+    border-radius: 10px;
+}
+
 /* .parent_home_two_child {
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -123,10 +134,10 @@ This is the New Brown Color base
 
 .parent_home_two_div {
     width: 300px;
-    padding: 10px;
+    padding: 5px;
     margin: 5px;
     background-color: #d4a276;
-    border-bottom: 8px solid #583101;
+    border-bottom: 5px solid #583101;
     border-radius: 10px;
     text-align: center;
 }
@@ -140,7 +151,6 @@ This is the New Brown Color base
     margin-top: 10px;
     margin-bottom: 0px;
 }
-
 
 
 .card_one_div {
@@ -439,7 +449,7 @@ h5 {
 
     .parent_home_two_div {
         width: auto;
-        padding: 10px;
+        padding: 5px;
         margin: 5px;
         background-color: #d4a276;
         border-bottom: 8px solid #583101;
@@ -539,8 +549,9 @@ h5 {
 
     .parent_home_two_div {
         width: auto;
+        padding: 5px;
+        border-bottom: 3px solid #583101;
     }
-
 
 
     .card_center_five {

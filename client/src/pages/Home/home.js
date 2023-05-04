@@ -80,6 +80,7 @@ const home = () => {
 
       <div className='parent_home_two' >
         <h1>OUR TREATMENT</h1>
+        <hr></hr>
         <div className='parent_home_two_child row row-cols-1 row-cols-md-4 g-4'>
 
           <div className='col'>
