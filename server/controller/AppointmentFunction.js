@@ -52,7 +52,6 @@ const AppointmentGetFun = async (req, res) => {
     }
 }
 
-
 const AppointmentDeleteFun = async (req, res) => {
     try {
         const appointmentId = req.params.id;

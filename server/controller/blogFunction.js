@@ -48,7 +48,6 @@ const BlogPostFun = async (req, res) => {
             blogDescription
         });
 
-
         const blogData = await newBlog.save();
 
         console.log(blogData);

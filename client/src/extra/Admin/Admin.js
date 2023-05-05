@@ -12,7 +12,10 @@ const Admin = () => {
     const [consultations, setConsultation] = useState([]);
     const [enquirys, setEnquiryData] = useState([]);
     const [blogs, setBlogData] = useState([]);
-    
+
+    // This is for the Search feature by data
+    const [searchDate, setSearchDate] = useState('');
+
 
     // This is for the Blog Post
     const [blogTitle, setBlogTitle] = useState("");
@@ -136,6 +139,12 @@ const Admin = () => {
         }
     }
 
+    // This is for the Search 
+  
+    const filteredAppointments = appointments.filter((appointment) =>
+    appointment.date.includes(searchDate)
+  );
+
     return (
         <div className='tab_parent'>
             <Tab.Container id="left-tabs-example" defaultActiveKey="first">
@@ -181,8 +190,14 @@ const Admin = () => {
                                 </div>
                             </Tab.Pane>
                             <Tab.Pane eventKey="third">
+                                <div className='appointment_one_data'>
+                                
+                                            Search Appointment By Date : 
+                                            <input type="date" value={searchDate} onChange={(e) => setSearchDate(e.target.value)} />
+                                </div>
+
                                 <div>
-                                    {appointments.map(appointment => (
+                                    {filteredAppointments.map(appointment => (
                                         <div className='appointment_one_data' key={appointment._id}>
                                             <p>Name: {appointment.name}</p>
                                             <p>Email: {appointment.email}</p>

@@ -110,7 +110,6 @@ function MyVerticallyCenteredModal(props) {
         })
     }
 
-
     return (
         <Modal
             {...props}

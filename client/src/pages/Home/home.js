@@ -12,9 +12,7 @@ const home = () => {
     <div className='home'>
       <Casroul />
 
-
       <div className='parent_home'>
-
 
         <div className='homeopathy_text'>
           <h4>Homeopathy is a system of natural medicine based upon the ancient principle of "like cures like."</h4>
@@ -25,7 +23,6 @@ const home = () => {
           <div className='text_medicine_text'>
             <h1>TOP HOMEOPATHY CLINIC ONLINE</h1>
             <p>Dr Anubha’s Homeopathy clinic can be accessed from USA, UK, Canada, Australia, Germany, UAE, Pakistan, India and worldwide though it is based in Hyderabad. Using modern online technology, from the convenience of your home, you can visit Dr Anubha’s Online Homeopathic Clinic. This Homeo Care Clinic is a solution for all your health issues under one roof. This is the best place if you are seeking treatment for any diseases. This Homeo Clinic provides a remedy for all ailment. Without exception, it emphasises on the well-being of the sick person and hence, it is undoubtedly one of the unrivalled Homeopathy Clinic in Hyderabad. </p>
-
 
           </div>
           <div className='text_medicine_img'>

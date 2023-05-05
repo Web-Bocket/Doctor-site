@@ -35,6 +35,13 @@
     box-shadow: 0px 12px 20px rgb(0, 0, 0, 0.2);
 }
 
+.appointment_one_data input{
+    background-color: white;
+    margin: 5px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
 
 .blog_post_div {
     background-color: #ffedd8;
