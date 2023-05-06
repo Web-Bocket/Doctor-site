@@ -1,0 +1,116 @@
+/* This is the New Brown Color base 
+1. 583101
+2. 603808
+3. d4a276 
+4. ffedd8 */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+/* font-family: 'Noto Sans', sans-serif; */
+
+
+.login_parent {
+    background-color: white;
+    /* height: 80vh; */
+    display: flex;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+
+.login_div {
+    width: 65%;
+    margin: auto;
+    display: flex;
+    background-color: #ffedd8;
+    border-radius: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.input_login_div {
+    width: 50%;
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+.input_login_div input {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.input_login_div Button {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: #583101;
+    border: 1px solid #583101;
+}
+
+.input_login_div p {
+    color: black;
+    font-weight: 400;
+}
+
+.input_login_div .nav_link {
+    color: #583101;
+    font-weight: 600;
+}
+
+
+.img_login_div {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: green; */
+    margin: 20px;
+    padding: 20px;
+}
+
+.img_login_div img {
+    width: 80%;
+}
+
+
+
+/* 1550 This is for the PC View */
+@media (max-width: 1550px) {}
+
+/* 1210 This is for the Table View */
+@media (max-width: 1210px) {
+
+
+}
+
+/* 910 - This is for the Mobile View */
+@media (max-width: 910px) {
+
+    .login_div {
+        display: flex;
+        align-items: center;
+        width: 95%;
+        flex-direction: column;
+    }
+
+    .input_login_div {
+        width: 100%;
+    }
+
+
+    .img_login_div {
+        width: 90%;
+    }
+    
+    .img_login_div img {
+        width: 90%;
+    }
+   
+   
+
+
+}

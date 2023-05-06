@@ -79,6 +79,30 @@ const LogoutFunction = async(req, res) => {
         expires: new Date(Date.now())
     });
     return res.status(200).json({ message: "User Logged out Successfully" });
+};
+
+
+const UserGetFun = async (req, res) => {
+
+    try {
+        const UserData = await UserModel.find();
+        res.status(200).send(UserData);
+
+    } catch (error) {
+        console.log("Error while getting the User Data" + error);
+    }
 }
 
-module.exports = { RegisterFunction, LoginFunction, LogoutFunction };
+
+const UsreDeleteFun = async (req, res) => {
+    try {
+        const userId = req.params.id;
+        const deletedUser = await UserModel.findByIdAndDelete(userId);
+        res.status(200).send("User deleted successfully");
+    } catch (error) {
+        console.log("Error while deleting the User" + error);
+        res.status(500).send("Error while deleting the User");
+    }
+};
+
+module.exports = { RegisterFunction, LoginFunction, LogoutFunction, UserGetFun, UsreDeleteFun };

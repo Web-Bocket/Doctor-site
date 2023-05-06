@@ -31,6 +31,8 @@ import Admin from "../extra/Admin/Admin";
 
 import PageNot from "../errors/pageNot";
 import Thanks from "../extra/Thanks/Thanks";
+import Register from "../pages/Auth/Register";
+import Login from "../pages/Auth/Login";
 
 const routes = () => {
     return (
@@ -65,6 +67,9 @@ const routes = () => {
                 <Route path="/children" element={<Children />} />
 
                 <Route path="/admin/u=admin123&p=admin123" element={<Admin />} />
+
+                <Route path="/register" element={<Register/>} />
+                <Route path="/login" element={<Login />} />
 
                 <Route path="/thanks" element={<Thanks />} />
                 <Route path="/*" element={<PageNot />} />

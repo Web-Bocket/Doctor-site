@@ -12,6 +12,7 @@ const Admin = () => {
     const [consultations, setConsultation] = useState([]);
     const [enquirys, setEnquiryData] = useState([]);
     const [blogs, setBlogData] = useState([]);
+    const [users, setUser] = useState([]);
 
     // This is for the Search feature by data
     const [searchDate, setSearchDate] = useState('');
@@ -64,6 +65,16 @@ const Admin = () => {
             .catch(error => {
                 console.log('Error fetching blog Data:', error);
             });
+
+        // This is for the User
+        axios.get('http://localhost:5000/user')
+            .then(response => {
+                setUser(response.data);
+            })
+            .catch(error => {
+                console.log('Error fetching User Data:', error);
+            });
+
     }, []);
 
 
@@ -139,11 +150,21 @@ const Admin = () => {
         }
     }
 
+    const deleteUser = async (userId) => {
+        try {
+            const response = await axios.delete(`http://localhost:5000/user/${userId}`);
+            console.log(response);
+            window.alert("User Data Deleted Successfully");
+        } catch (error) {
+            console.log("Error while deleting the User Data" + error);
+        }
+    }
+
     // This is for the Search 
-  
+
     const filteredAppointments = appointments.filter((appointment) =>
-    appointment.date.includes(searchDate)
-  );
+        appointment.date.includes(searchDate)
+    );
 
     return (
         <div className='tab_parent'>
@@ -169,6 +190,9 @@ const Admin = () => {
                             <Nav.Item>
                                 <Nav.Link eventKey="sixth">Blog Post</Nav.Link>
                             </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link eventKey="seven">User</Nav.Link>
+                            </Nav.Item>
                         </Nav>
                     </Col>
                     <Col className='left_tab' sm={9}>
@@ -191,9 +215,9 @@ const Admin = () => {
                             </Tab.Pane>
                             <Tab.Pane eventKey="third">
                                 <div className='appointment_one_data'>
-                                
-                                            Search Appointment By Date : 
-                                            <input type="date" value={searchDate} onChange={(e) => setSearchDate(e.target.value)} />
+
+                                    Search Appointment By Date :
+                                    <input type="date" value={searchDate} onChange={(e) => setSearchDate(e.target.value)} />
                                 </div>
 
                                 <div>
@@ -259,6 +283,26 @@ const Admin = () => {
                                 </div>
                             </Tab.Pane>
                         </Tab.Content>
+                        <Tab.Pane eventKey="seven">
+                            <div>
+                                {users.map(user => (
+                                    <div className='appointment_one_data' key={user._id}>
+                                        <p>Patient Name : {user.patientName}</p>
+                                        <p>Patient Code : {user.patientCode}</p>
+                                        <p>City : {user.city}</p>
+                                        <p>Photo : {user.photo}</p>
+                                        <p>Mobile No : {user.mobileNumber}</p>
+                                        <p>Email : {user.email}</p>
+                                        <p>State : {user.state}</p>
+                                        <p>Pin No : {user.pinNo}</p>
+                                        <p>Blood Group : {user.bloodGroup}</p>
+                                        <p>Disease : {user.diseases}</p>
+                                        <p>Category : {user.category}</p>
+                                        <Button onClick={() => deleteUser(user._id)}>Delete Blog</Button>
+                                    </div>
+                                ))}
+                            </div>
+                        </Tab.Pane>
                     </Col>
                 </Row>
             </Tab.Container>
