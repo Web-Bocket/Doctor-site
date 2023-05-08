@@ -8,6 +8,12 @@
     font-family: 'Noto Sans', sans-serif;
 }
 
+.tab_parent h1{
+    font-weight: bold;
+    color: #583101;
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+}
 
 .right_tab {
     background-color: #ffedd8;

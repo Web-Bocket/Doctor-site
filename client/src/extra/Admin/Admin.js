@@ -168,6 +168,7 @@ const Admin = () => {
 
     return (
         <div className='tab_parent'>
+            <h1>Doctor Panel</h1>
             <Tab.Container id="left-tabs-example" defaultActiveKey="first">
                 <Row>
                     <Col className='right_tab' sm={3}>
@@ -176,13 +177,13 @@ const Admin = () => {
                                 <Nav.Link className='nav_link_tab' eventKey="first">Dashboard</Nav.Link>
                             </Nav.Item> */}
                             <Nav.Item>
-                                <Nav.Link eventKey="first">Enquiry</Nav.Link>
+                                <Nav.Link eventKey="first">Patient Enquiry</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="third">Appointment</Nav.Link>
+                                <Nav.Link eventKey="third">Patient Appointment</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="fourth">Consultation</Nav.Link>
+                                <Nav.Link eventKey="fourth">Patient Consultation</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
                                 <Nav.Link eventKey="fifth">Blogs</Nav.Link>
@@ -191,7 +192,7 @@ const Admin = () => {
                                 <Nav.Link eventKey="sixth">Blog Post</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="seven">User</Nav.Link>
+                                <Nav.Link eventKey="seven">Total Users</Nav.Link>
                             </Nav.Item>
                         </Nav>
                     </Col>

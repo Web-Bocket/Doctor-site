@@ -32,7 +32,6 @@ const EnquiryPostFun = async (req, res) => {
     }
 }
 
-
 const EnquiryGetFun = async (req, res) => {
 
     try {

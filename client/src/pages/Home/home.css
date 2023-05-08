@@ -116,6 +116,12 @@ This is the New Brown Color base
     /* background-color: pink; */
 }
 
+.parent_home_two_child{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-evenly;
+}
+
 .parent_home_two h1 {
     font-size: 2em;
     font-weight: 800;
@@ -126,11 +132,6 @@ This is the New Brown Color base
     width: 30%;
     border-radius: 10px;
 }
-
-/* .parent_home_two_child {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-} */
 
 .parent_home_two_div {
     width: 300px;
@@ -144,6 +145,8 @@ This is the New Brown Color base
 
 .parent_home_two_div img {
     border-radius: 10px;
+    height: 250px;
+    object-fit: cover;
 }
 
 .parent_home_two_div p {
@@ -181,7 +184,7 @@ This is the New Brown Color base
     margin: 10px;
     padding: 10px;
     text-align: center;
-    background-color: #d4a276;
+    background-color: #ffedd8;
     border-bottom: 8px solid #583101;
     border-radius: 5px;
 }
@@ -255,7 +258,16 @@ h5 {
     color: black;
 }
 
+.card_center_four_text h1 {
+    font-size: 1.7em;
+    font-weight: bold;
+}
 
+.card_center_four_text hr {
+    border: 2px solid #583101;
+    width: 50%;
+    border-radius: 10px;
+}
 
 .card_center_five {
     background-color: #ffedd8;
@@ -435,7 +447,31 @@ h5 {
 
 
 /* 1550 This is for the PC View */
-@media (max-width: 1550px) {}
+@media (max-width: 1550px) {
+
+    .parent_home_two {
+        max-width: 90vw;
+        margin: auto;
+        margin-top: 40px;
+        /* background-color: pink; */
+    }
+
+    .parent_home_two_child{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: space-evenly;
+    }
+
+    .parent_home_two_div {
+        width: auto;
+        padding: 5px;
+        margin: 5px;
+        background-color: #d4a276;
+        border-bottom: 8px solid #583101;
+        border-radius: 10px;
+        text-align: center;
+    }
+}
 
 /* 1210 This is for the Table View */
 @media (max-width: 1210px) {
@@ -447,10 +483,16 @@ h5 {
         /* background-color: pink; */
     }
 
+    .parent_home_two_child{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: space-evenly;
+    }
+
     .parent_home_two_div {
         width: auto;
-        padding: 5px;
-        margin: 5px;
+        padding: 10px;
+        margin: 10px;
         background-color: #d4a276;
         border-bottom: 8px solid #583101;
         border-radius: 10px;
@@ -492,6 +534,12 @@ h5 {
         max-width: 95vw;
         margin: auto;
         margin-top: 50px;
+    }
+
+    .parent_home_two_child{
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: space-evenly;
     }
 
     .homeopathy_text {

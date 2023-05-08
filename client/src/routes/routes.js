@@ -74,7 +74,6 @@ const routes = () => {
                 <Route path="/thanks" element={<Thanks />} />
                 <Route path="/*" element={<PageNot />} />
 
-
             </Routes>
             <Footer />
         </Router>

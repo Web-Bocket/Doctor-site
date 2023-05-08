@@ -2,7 +2,7 @@ const UserModel = require("../models/UserModel");
 const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken");
 
-
+// REGISTER User
 const RegisterFunction = async (req, res) => {
 
     try {
@@ -19,7 +19,7 @@ const RegisterFunction = async (req, res) => {
 
         const hashPassword = await bcrypt.hash(password, 10);
 
-        const newUser = new UserModel({
+        const user = new UserModel({
             patientName,
             patientCode,
             city,
@@ -34,14 +34,21 @@ const RegisterFunction = async (req, res) => {
             password: hashPassword,
         });
 
-        const userData = await newUser.save();
-        console.log(userData);
-
-        const token = jwt.sign({ _id: userData._id }, "iamnewuser");
+        const token = jwt.sign({ _id: user._id }, process.env.SECRET);
         console.log(token);
 
+        const userData = await user.save();
+        console.log(userData);
+
         if (userData) {
+
+            res.cookie("Ourtoken", token, {
+                httpOnly: true,
+                expires: new Date(Date.now() + 60000),
+            });
+
             res.status(200).json({ message: "User Registered Successfully" });
+
         } else {
             res.status(402).json({ error: "User did not Registered Successfully" });
         }
@@ -51,30 +58,44 @@ const RegisterFunction = async (req, res) => {
     }
 };
 
+// LOGIN User
 const LoginFunction = async (req, res) => {
 
-    const { email, password } = req.body;
+    try {
+        const { email, password } = req.body;
 
-    const user = await UserModel.findOne({ email: email });
+        if (!email || !password) {
+            res.status(400).json({ error: "Please fill all the fields" });
+        }
 
-    if (!user) {
-        return res.status(401).json({ message: "This email does not exist. Please register first." });
-    }
+        const user = await UserModel.findOne({ email: email });
+        if (!user) {
+            return res.status(401).json({ message: "This email does not exist. Please register first." });
+        }
 
-    const token = jwt.sign({ _id: user._id }, "iamnewuser");
-    console.log(token);
+        const token = jwt.sign({ _id: user._id }, process.env.SECRET);
+        console.log(token);
 
-    const isMatch = await bcrypt.compare(password, user.password);
+        res.cookie("token", token, {
+            httpOnly: true,
+            expires: new Date(Date.now() + 6000000),
+        });
 
-    if (!isMatch) {
-        return res.status(402).json({ message: "Incorrect Password" });
-    } else {
-        res.cookie("token", token, {httpOnly : true});
-        return res.status(200).json({ message: "User Logged in Successfully" });
+        const isMatch = await bcrypt.compare(password, user.password);
+
+        if (!isMatch) {
+            return res.status(402).json({ message: "Incorrect Password" });
+        } else {
+            return res.status(200).json({ token, message: "User Logged in Successfully" });
+        }
+
+    } catch (error) {
+        
     }
 };
 
-const LogoutFunction = async(req, res) => {
+// LOGOUT User
+const LogoutFunction = async (req, res) => {
     res.cookie("token", null, {
         expires: new Date(Date.now())
     });
@@ -82,8 +103,8 @@ const LogoutFunction = async(req, res) => {
 };
 
 
+// GET User
 const UserGetFun = async (req, res) => {
-
     try {
         const UserData = await UserModel.find();
         res.status(200).send(UserData);
@@ -93,8 +114,8 @@ const UserGetFun = async (req, res) => {
     }
 }
 
-
-const UsreDeleteFun = async (req, res) => {
+// DELETE User
+const UserDeleteFun = async (req, res) => {
     try {
         const userId = req.params.id;
         const deletedUser = await UserModel.findByIdAndDelete(userId);
@@ -105,4 +126,4 @@ const UsreDeleteFun = async (req, res) => {
     }
 };
 
-module.exports = { RegisterFunction, LoginFunction, LogoutFunction, UserGetFun, UsreDeleteFun };
+module.exports = { RegisterFunction, LoginFunction, LogoutFunction, UserGetFun, UserDeleteFun };

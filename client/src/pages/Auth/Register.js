@@ -93,14 +93,17 @@ const Register = () => {
             diseases,
             category,
             password,
-        }).then(() => {
+        }).then((res) => {
+
+            if(res.status == 401){
+                console.log("This email already exists");
+            }
             console.log("Register Successfully");
             navigate("/login");
         }).catch((err) => {
             console.log("Problem in the Register " + err);
         })
     }
-
 
     return (
         <div className='login_parent'>

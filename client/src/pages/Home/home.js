@@ -64,6 +64,7 @@ const home = () => {
         <div className='card_center_four_text'>
 
           <h1>COMPLETE HOMEOPATHIC CARE FOR YOUR FAMILY</h1>
+          <hr></hr>
           <p>Using Homeopathic Treatments, you and your family can benefit from improved health since homeopathic medicines activate the self-regulatory mechanism of the body that helps you treat all kinds of ailments & diseases. It also strengthens your immunity while optimizing your bodily functioning.</p>
           <p>Homeopathic medicines’ major benefits are that they are natural and made from small amounts of herbs, minerals, and animal ingredients. They can be used by pregnant women, infants, and children without worrying about the dosage.</p>
           <p>Additionally, Homeopathic Medicine is not toxic since they are all-natural and contain amounts of minerals, herbs, and animal products, making them suitable for children and pregnant women.</p>
@@ -78,8 +79,8 @@ const home = () => {
       <div className='parent_home_two' >
         <h1>OUR TREATMENT</h1>
         <hr></hr>
-        <div className='parent_home_two_child row row-cols-1 row-cols-md-4 g-4'>
-
+        {/* <div className='parent_home_two_child row row-cols-1 row-cols-md-4 g-4'> */}
+        <div className='parent_home_two_child'>
           <div className='col'>
             <div className='parent_home_two_div'>
               <img src='https://www.dranubha.com/wp-content/uploads/2016/04/diabetes-cure1.jpg' alt='deases img' />

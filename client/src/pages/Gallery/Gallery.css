@@ -1,18 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 /* font-family: 'Noto Sans', sans-serif; */
 
-
-
 .gallery_parent {
     /* background-color: yellow; */
+    background-color: #ffedd8;
     font-family: 'Noto Sans', sans-serif;
 }
 
 .gallery_parent_div {
     margin: auto;
     width: 65%;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     /* background-color: green; */
     display: flex;
     flex-direction: column;
@@ -29,8 +28,9 @@
 }
 
 .gallery_div {
-    display: flex;
-    width: auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-evenly;
 }
 
 .one_gallery_div {
@@ -38,16 +38,19 @@
     padding: 5px;
     margin: 10px;
     text-align: center;
-    border-radius: 5px;
-    border-bottom: 2px solid #583101;
+    border-radius: 10px;
+    /* border-bottom: 5px solid #583101; */
 }
 
 .one_gallery_div img {
-    width: 100%;
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .one_gallery_div h4 {
-    font-size: small;
+    font-size: 1.3em;
     margin-top: 5px;
 }
 
@@ -97,10 +100,22 @@
 
 
 /* 1550 This is for the PC View */
-@media (max-width: 1550px) {}
+@media (max-width: 1550px) {
+    .gallery_div {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: space-evenly;
+    }
+}
 
 /* 1210 This is for the Table View */
-@media (max-width: 1210px) {}
+@media (max-width: 1210px) {
+    .gallery_div {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-evenly;
+    }
+}
 
 /* 910 - This is for the Mobile View */
 @media (max-width: 910px) {

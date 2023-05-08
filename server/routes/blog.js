@@ -1,5 +1,6 @@
 const express = require("express");
 const { BlogGetFun, BlogOneFun, BlogPostFun, BlogDeleteFun } = require('../controller/blogFunction.js');
+const isAuthenticated = require('../middleware/Auth.js');
 
 const router = express.Router();
 
