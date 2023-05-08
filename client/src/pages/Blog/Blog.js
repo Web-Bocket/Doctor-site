@@ -32,14 +32,6 @@ const Blog = () => {
         <hr></hr>
         <div className='blog_div'>
 
-          {/* {Array.isArray(blogs) && blogs.map(blog => (
-            <div className='one_blog_div' key={blog._id}>
-              <img src={blog.blogImage} />
-              <h2>{blog.blogTitle}</h2>
-              <p>{blog.blogPerson}</p>
-              <Button>Read More</Button>
-            </div>
-          ))} */}
 
           {Array.isArray(blogs) && blogs.map(blog => (
             <div className='one_blog_div' key={blog._id}>

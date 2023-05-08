@@ -1,23 +1,25 @@
 const UserModel = require("../models/UserModel");
 const jwt = require("jsonwebtoken");
 
-// AUTH User
 const isAuthenticated = async (req, res, next) => {
     try {
         const token = req.cookies.token;
-
-        if (token) {
-            const verifyToken = jwt.verify(token, process.env.SECRET);
-            req.user = await UserModel.findById(verifyToken._id);
-            next();
-        } else {
-            res.redirect('/login');
+        if (!token) {
+            return res.status(401).send("Unauthorized: No token provided");
         }
 
+        const decoded = await jwt.verify(token, process.env.SECRET);
+        const user = await UserModel.findById(decoded._id);
+        if (!user) {
+            return res.status(401).send("Unauthorized: Invalid token");
+        }
+
+        req.user = user;
+        next();
     } catch (error) {
-        res.status(401).send('Unauthorized: No token provided');
-        console.log(error);
+        console.error(error);
+        return res.status(500).send("Server Error");
     }
-}
+};
 
 module.exports = isAuthenticated;

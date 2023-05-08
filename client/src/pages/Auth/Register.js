@@ -95,7 +95,7 @@ const Register = () => {
             password,
         }).then((res) => {
 
-            if(res.status == 401){
+            if (res.status == 401) {
                 console.log("This email already exists");
             }
             console.log("Register Successfully");

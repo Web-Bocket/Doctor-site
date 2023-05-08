@@ -4,8 +4,8 @@ const { PostConsultFunction, ConsultationGetFun, ConsultationDeleteFun } = requi
 const isAuthenticated = require("../middleware/Auth");
 
 
-router.post('/consultation', isAuthenticated,  PostConsultFunction);
-router.get('/consultation', ConsultationGetFun);
+router.post('/consultation',  PostConsultFunction);
+router.get('/consultation',  ConsultationGetFun);
 router.delete("/consultation/:id", ConsultationDeleteFun);
 
 module.exports = router;

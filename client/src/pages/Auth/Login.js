@@ -4,7 +4,7 @@ import './auth.css';
 import NavLink from 'react-bootstrap/esm/NavLink';
 import LoginImage from '../../assets/login_two_one.png';
 import axios from 'axios';
-import Cookies from 'js-cookie';
+// import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -12,18 +12,18 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = (e) => {
+
+    const handleLogin = async (e) => {
         e.preventDefault();
 
         axios.post('http://localhost:5000/login', {
             email,
             password,
         })
-            .then((response) => {
+            .then(() => {
                 console.log('Login Successfully');
-                const token = response.data.token;
-                // // localStorage.setItem('authToken', token);
-                Cookies.set('token', token);
+                // console.log(response);
+                // const token = response.data.token;
                 // console.log(token);
                 navigate('/');
             })
