@@ -68,7 +68,7 @@ const RegisterFunction = async (req, res) => {
             });
 
             res.cookie("token", token, {
-                httpOnly: true,
+                // httpOnly: true,
                 maxAge: 60 * 60 * 1000 // 1 hour
             });
 
@@ -112,7 +112,6 @@ const LoginFunction = async (req, res) => {
             httpOnly: true,
             expires: new Date(Date.now() + 6000000),
         });
-
 
         return res
             .status(200)

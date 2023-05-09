@@ -112,9 +112,9 @@ const Register = () => {
                 <div className='input_login_div'>
                     <h1>Register</h1>
                     <input type='text' placeholder='Patient Name' onChange={(e) => setPatientName(e.target.value)} />
-                    <input type='text' placeholder='Patient Code' onChange={(e) => setPatientCode(e.target.value)} />
+                    {/* <input type='text' placeholder='Patient Code' onChange={(e) => setPatientCode(e.target.value)} /> */}
                     <input type='text' placeholder='City' onChange={(e) => setCity(e.target.value)} />
-                    <input type='text' placeholder='Photo' onChange={(e) => setPhoto(e.target.value)} />
+                    <input type='file' placeholder='Photo' onChange={(e) => setPhoto(e.target.value)} />
                     <input type='text' placeholder='Mobile No' onChange={(e) => setMobile(e.target.value)} />
                     <input type='email' placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
                     <input type='text' placeholder='State' onChange={(e) => setState(e.target.value)} />

@@ -20,11 +20,11 @@ const Login = () => {
             email,
             password,
         })
-            .then(() => {
+            .then((response) => {
                 console.log('Login Successfully');
                 // console.log(response);
-                // const token = response.data.token;
-                // console.log(token);
+                const token = response.data.token;
+                console.log(token);
                 navigate('/');
             })
             .catch((error) => {
