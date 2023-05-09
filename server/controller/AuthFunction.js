@@ -7,9 +7,9 @@ const RegisterFunction = async (req, res) => {
     try {
         const {
             patientName,
-            patientCode,
+            // patientCode,
             city,
-            photo,
+            // photo,
             mobileNumber,
             email,
             state,
@@ -22,9 +22,9 @@ const RegisterFunction = async (req, res) => {
 
         if (
             !patientName ||
-            !patientCode ||
+            // !patientCode ||
             !city ||
-            !photo ||
+            // !photo ||
             !mobileNumber ||
             !email ||
             !state ||
@@ -47,9 +47,9 @@ const RegisterFunction = async (req, res) => {
 
         const user = new UserModel({
             patientName,
-            patientCode,
+            // patientCode,
             city,
-            photo,
+            // photo,
             mobileNumber,
             email,
             state,

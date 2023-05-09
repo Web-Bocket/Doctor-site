@@ -5,7 +5,7 @@ import NavLink from 'react-bootstrap/esm/NavLink';
 import LoginImage from '../../assets/login_two_one.png';
 import axios from 'axios';
 // import Cookies from 'js-cookie';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -33,6 +33,10 @@ const Login = () => {
             });
     };
 
+    const doctorLogin = () => {
+        navigate('/adminLogin');
+    }
+
     return (
         <div className="login_parent">
             <div className="login_div">
@@ -50,7 +54,7 @@ const Login = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    <Button onClick={handleLogin}>Login</Button>
+                    <Button onClick={handleLogin}>Patient Login</Button>
 
                     <h5>Or</h5>
                     <p>
@@ -59,10 +63,13 @@ const Login = () => {
                             Register Here
                         </NavLink>
                     </p>
+                    <hr></hr>
+                    <Button onClick={doctorLogin}>Doctor Login</Button>
                 </div>
                 <div className="img_login_div">
                     <img src={LoginImage} alt="login img" />
                 </div>
+
             </div>
         </div>
     );

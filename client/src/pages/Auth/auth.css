@@ -33,17 +33,26 @@
     flex-direction: column;
     padding: 20px;
     margin: 20px;
-    text-align: center;
-    justify-content: center;
+    align-items: center;
+    justify-self: center;
 }
 
 .input_login_div input {
     padding: 10px;
     margin: 5px;
     border-radius: 10px;
+    width: 100%;
 }
 
+.input_radio_form {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+
 .input_login_div Button {
+    width: 100%;
     padding: 10px;
     margin: 5px;
     border-radius: 10px;
@@ -82,19 +91,16 @@
 @media (max-width: 1550px) {}
 
 /* 1210 This is for the Table View */
-@media (max-width: 1210px) {
-
-
-}
+@media (max-width: 1210px) {}
 
 /* 910 - This is for the Mobile View */
 @media (max-width: 910px) {
 
     .login_div {
         display: flex;
-        align-items: center;
         width: 95%;
         flex-direction: column;
+        align-items: center;
     }
 
     .input_login_div {
@@ -105,12 +111,12 @@
     .img_login_div {
         width: 90%;
     }
-    
+
     .img_login_div img {
         width: 90%;
     }
-   
-   
+
+
 
 
 }

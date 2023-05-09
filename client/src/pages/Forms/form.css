@@ -13,15 +13,27 @@
     text-align: center;
 }
 
+
 .form_parent_down {
     width: 65%;
-    margin: auto;
     background-color: #ffedd8;
     display: flex;
     padding: 20px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin: auto;
     border-radius: 20px 0px 20px 0px;
+}
+
+.form_div_two table {
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 10px;
+}
+
+.form_div_two tr,
+th,
+td {
+    border: 1px solid gray;
+    padding: 10px;
 }
 
 .form_div_one {
@@ -103,55 +115,41 @@
 @media (max-width: 1550px) {}
 
 /* 1210 This is for the Table View */
-@media (max-width: 1210px) {
-
-
-    .form_parent {
-        margin: auto;
-        width: 80%;
-        margin-top: 20px;
-        margin-bottom: 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .form_parent_down {
-        width: 90%;
-        margin: auto;
-        background-color: #ffedd8;
-        display: flex;
-        padding: 20px;
-        margin-top: 20px;
-        align-items: center;
-        flex-direction: column;
-    }
-
-}
+@media (max-width: 1210px) {}
 
 /* 910 - This is for the Mobile View */
 @media (max-width: 910px) {
 
-
     .form_parent {
         margin: auto;
-        width: 95%;
-        margin-top: 20px;
-        margin-bottom: 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        font-family: 'Noto Sans', sans-serif;
+        width: 90%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .form_parent h1 {
+        text-align: center;
     }
 
     .form_parent_down {
         width: 100%;
-        margin: auto;
         background-color: #ffedd8;
         display: flex;
         padding: 20px;
-        margin-top: 20px;
-        align-items: center;
         flex-direction: column;
+        align-items: center;
+        margin: auto;
+        border-radius: 20px 0px 20px 0px;
+    }
+
+
+    .form_div_one {
+        margin-top: 20px;
+    }
+
+    .form_div_two img {
+        margin-top: 20px;
     }
 
 }

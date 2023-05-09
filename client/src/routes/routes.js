@@ -33,6 +33,7 @@ import PageNot from "../errors/pageNot";
 import Thanks from "../extra/Thanks/Thanks";
 import Register from "../pages/Auth/Register";
 import Login from "../pages/Auth/Login";
+import AdminLogin from "../pages/Auth/AdminLogin";
 
 const routes = () => {
     return (
@@ -68,7 +69,9 @@ const routes = () => {
 
                 <Route path="/admin/u=admin123&p=admin123" element={<Admin />} />
 
-                <Route path="/register" element={<Register/>} />
+                <Route path="/adminLogin" element={<AdminLogin />} />
+
+                <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
 
                 <Route path="/thanks" element={<Thanks />} />

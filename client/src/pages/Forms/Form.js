@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/esm/Button';
 import axios from 'axios';
 import './form.css';
 
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast, useToast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -18,13 +18,15 @@ const Form = () => {
     const [age, setAge] = useState("");
     const [address, setAddress] = useState("");
     const [city, setCity] = useState("");
+    const [mode, setMode] = useState("");
+    const [doctor, setDoctor] = useState("");
     const [state, setState] = useState("");
     const [country, setCountry] = useState("");
     const [problem, setProblme] = useState("");
 
     const handleSubmit = () => {
 
-        if (!firstName || !lastName || !gender || !address || !city || !state || !country || !problem) {
+        if (!firstName || !lastName || !gender || !address || !city || !state || !mode || !doctor || !country || !problem) {
             // window.alert("Please fill in all required fields.");
             toast.info('Please fill all the fields', {
                 position: "top-right",
@@ -98,6 +100,8 @@ const Form = () => {
             age,
             address,
             city,
+            mode,
+            doctor,
             state,
             country,
             problem
@@ -114,11 +118,47 @@ const Form = () => {
     return (
         <div className='form_parent'>
             <h1>Fill Online Consultation Form</h1>
+
             <div className='form_parent_down'>
 
                 <div className='form_div_two'>
                     <h1>Fill Form</h1>
-                    <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.</p>
+                    <table>
+                        <tr>
+                            <th>Day</th>
+                            <th>Timings</th>
+                        </tr>
+                        <tr>
+                            <td>Monday</td>
+                            <td>10:00am - 04:00 pm</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>10:00am - 04:00 pm</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>10:00am - 04:00 pm</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>02:00am - 08:00 pm</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>02:00am - 08:00 pm</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>02:00am - 08:00 pm</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>11:00am - 02:00 pm</td>
+                        </tr>
+
+                    </table>
+                    {/* <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.</p> */}
                     <img src='https://img.freepik.com/free-vector/flat-design-illustration-customer-support_23-2148887720.jpg' alt='contact img' />
                 </div>
 
@@ -135,6 +175,15 @@ const Form = () => {
                             <option value="Female">Female</option>
                         </select>
                     </label>
+                    <label className='input_radio_form'>
+                        Mode
+                        <select value={mode} onChange={(e) => setMode(e.target.value)}>
+                            <option value="">Select Mode</option>
+                            <option value="Online">Online</option>
+                            <option value="Offline">Offline</option>
+                        </select>
+                    </label>
+                    <input type='text' onChange={(e) => setDoctor(e.target.value)} placeholder='Select Doctor' />
                     <input type='number' onChange={(e) => setAge(e.target.value)} placeholder='Select Age' />
                     <input type='text' onChange={(e) => setAddress(e.target.value)} placeholder='Enter Your Address' />
                     <input type='text' onChange={(e) => setCity(e.target.value)} placeholder='Enter Your City' />
@@ -143,7 +192,6 @@ const Form = () => {
                     <textarea rows="5" onChange={(e) => setProblme(e.target.value)} placeholder='Your query/health problem' />
                     <Button onClick={handleSubmit}>Send Details</Button>
                 </div>
-
 
             </div>
             <ToastContainer />

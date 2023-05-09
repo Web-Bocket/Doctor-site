@@ -13,6 +13,7 @@ function MyVerticallyCenteredModal(props) {
     const [phone, setYourPhone] = useState("");
     const [message, setMessage] = useState("");
     const [patientStatus, setPatientStatus] = useState("");
+    const [selectDoctor, setSelectDoctor] = useState("");
     const [gender, setGender] = useState("");
 
     const handleClearFields = () => {
@@ -29,7 +30,7 @@ function MyVerticallyCenteredModal(props) {
 
     const handleSubmit = () => {
         // Check if all required fields are filled
-        if (!name || !email || !date || !message || !patientStatus || !gender) {
+        if (!name || !email || !date || !message || !patientStatus || !selectDoctor || !gender) {
             // window.alert("Please fill in all required fields.");
 
             toast.info('Please fill all the fields', {
@@ -90,6 +91,7 @@ function MyVerticallyCenteredModal(props) {
             phone,
             message,
             patientStatus,
+            selectDoctor,
             gender,
         }).then(() => {
             handleClearFields();
@@ -127,12 +129,22 @@ function MyVerticallyCenteredModal(props) {
                 <input required value={email} onChange={(e) => setYourEmail(e.target.value)} placeholder='Your Email *' />
                 <input required value={date} onChange={(e) => setDate(e.target.value)} type='date' />
                 <input required value={phone} onChange={(e) => setYourPhone(e.target.value)} placeholder='Your-Phone No' />
+                {/* <input required value={selectDoctor} onChange={(e) => setSelectDoctor(e.target.value)} placeholder='Enter Doctor name' /> */}
                 <label className='input_radio'>
                     Select Patient Type:
                     <select required value={patientStatus} onChange={(e) => setPatientStatus(e.target.value)}>
                         <option value="">Select patient type</option>
                         <option value="Old">Old</option>
                         <option value="New">New</option>
+                    </select>
+                </label>
+
+                <label className='input_radio'>
+                    Select Mode:
+                    <select required value={patientStatus} onChange={(e) => setPatientStatus(e.target.value)}>
+                        <option value="">Select Appointment Mode</option>
+                        <option value="Old">Online</option>
+                        <option value="New">Offline</option>
                     </select>
                 </label>
 

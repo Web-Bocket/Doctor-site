@@ -41,6 +41,14 @@ const consultationSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    mode: {
+        type: String,
+        required: true
+    },
+    doctor: {
+        type: String,
+        required: true,
+    },
     country: {
         type: String,
         required: true,

@@ -17,6 +17,9 @@ const Admin = () => {
     // This is for the Search feature by data
     const [searchDate, setSearchDate] = useState('');
 
+    // This is for the Search consultation by the mode 
+    const [searchMode, setSearchMode] = useState('');
+
 
     // This is for the Blog Post
     const [blogTitle, setBlogTitle] = useState("");
@@ -160,11 +163,16 @@ const Admin = () => {
         }
     }
 
-    // This is for the Search 
-
     const filteredAppointments = appointments.filter((appointment) =>
-        appointment.date.includes(searchDate)
+        appointment.date?.includes(searchDate)
     );
+
+    // THis
+    const filteredConsultations = consultations.filter((consultation) =>
+        consultation.mode?.toLowerCase().includes(searchMode.toLowerCase())
+    );
+
+
 
     return (
         <div className='tab_parent'>
@@ -222,39 +230,58 @@ const Admin = () => {
                                 </div>
 
                                 <div>
-                                    {filteredAppointments.map(appointment => (
-                                        <div className='appointment_one_data' key={appointment._id}>
-                                            <p>Name: {appointment.name}</p>
-                                            <p>Email: {appointment.email}</p>
-                                            <p>City: {appointment.city}</p>
-                                            <p>Date: {appointment.date}</p>
-                                            <p>Phone: {appointment.phone}</p>
-                                            <p>Gender: {appointment.gender}</p>
-                                            <p>Status: {appointment.patientStatus}</p>
-                                            <p>Message: {appointment.message}</p>
-                                            <Button onClick={() => deleteAppointment(appointment._id)}>Delete Appointment Data</Button>
-                                        </div>
-                                    ))}
+                                    {filteredAppointments.length === 0 ? (
+                                        <p>No Result found</p>
+                                    ) : (
+                                        filteredAppointments.map(appointment => (
+                                            <div className='appointment_one_data' key={appointment._id}>
+                                                <p>Name: {appointment.name}</p>
+                                                <p>Email: {appointment.email}</p>
+                                                <p>City: {appointment.city}</p>
+                                                <p>Date: {appointment.date}</p>
+                                                <p>Phone: {appointment.phone}</p>
+                                                <p>Gender: {appointment.gender}</p>
+                                                <p>Status: {appointment.patientStatus}</p>
+                                                <p>Message: {appointment.message}</p>
+                                                <Button onClick={() => deleteAppointment(appointment._id)}>Delete Appointment Data</Button>
+                                            </div>
+                                        ))
+                                    )}
                                 </div>
                             </Tab.Pane>
                             <Tab.Pane eventKey="fourth">
+
+                                <div className='appointment_one_data'>
+
+                                    Search Consultation by Mode :
+                                    <input type="text" value={searchMode} placeholder='online or offline' onChange={(e) => setSearchMode(e.target.value)} />
+
+                                </div>
+
                                 <div>
-                                    {consultations.map(consultation => (
-                                        <div className='appointment_one_data' key={consultation._id}>
-                                            <p>First Name : {consultation.firstName}</p>
-                                            <p>Last Name : {consultation.lastName}</p>
-                                            <p>Email : {consultation.email}</p>
-                                            <p>Phone : {consultation.phone}</p>
-                                            <p>Gender : {consultation.gender}</p>
-                                            <p>Age : {consultation.age}</p>
-                                            <p>Address: {consultation.address}</p>
-                                            <p>City : {consultation.city}</p>
-                                            <p>State : {consultation.state}</p>
-                                            <p>Country : {consultation.country}</p>
-                                            <p>Problem : {consultation.problem}</p>
-                                            <Button onClick={() => deleteConsultation(consultation._id)}>Delete Consultation Data</Button>
-                                        </div>
-                                    ))}
+                                    {filteredConsultations.length === 0 ? (
+                                        <p>No Result found</p>
+                                    ) : (
+
+                                        filteredConsultations.map(consultation => (
+                                            <div className='appointment_one_data' key={consultation._id}>
+                                                <p>First Name : {consultation.firstName}</p>
+                                                <p>Last Name : {consultation.lastName}</p>
+                                                <p>Email : {consultation.email}</p>
+                                                <p>Phone : {consultation.phone}</p>
+                                                <p>Gender : {consultation.gender}</p>
+                                                <p>Age : {consultation.age}</p>
+                                                <p>Address: {consultation.address}</p>
+                                                <p>Mode : {consultation.mode}</p>
+                                                <p>Doctor : {consultation.doctor}</p>
+                                                <p>City : {consultation.city}</p>
+                                                <p>State : {consultation.state}</p>
+                                                <p>Country : {consultation.country}</p>
+                                                <p>Problem : {consultation.problem}</p>
+                                                <Button onClick={() => deleteConsultation(consultation._id)}>Delete Consultation Data</Button>
+                                            </div>
+                                        ))
+                                    )}
                                 </div>
                             </Tab.Pane>
                             <Tab.Pane eventKey="fifth">

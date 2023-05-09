@@ -18,18 +18,18 @@ const userScheme = new mongoose.Schema({
         type: String,
         required: true,
     },
-    patientCode: {
-        type: String,
-        required: true
-    },
+    // patientCode: {
+    //     type: String,
+    //     required: true
+    // },
     city: {
         type: String,
         required: true
     },
-    photo: {
-        type: String,
-        required: true,
-    },
+    // photo: {
+    //     type: String,
+    //     required: true,
+    // },
     mobileNumber: {
         type: String,
         required: true,

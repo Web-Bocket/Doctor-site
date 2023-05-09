@@ -5,9 +5,9 @@ const PostConsultFunction = async (req, res) => {
 
     try {
 
-        const { firstName, lastName, email, phone, gender, age, address, city, state, country, problem } = req.body;
+        const { firstName, lastName, email, phone, gender, age, address, city, mode, doctor, state, country, problem } = req.body;
 
-        if (!firstName || !lastName || !email || !phone || !gender || !age || !address || !city || !state || !country || !problem) {
+        if (!firstName || !lastName || !email || !phone || !gender || !age || !address || !city || !mode || !doctor || !state || !country || !problem) {
             return res.status(401).json({ message: "Please fill all the fields" });
         }
 
@@ -26,6 +26,8 @@ const PostConsultFunction = async (req, res) => {
             age,
             address,
             city,
+            mode,
+            doctor,
             state,
             country,
             problem
