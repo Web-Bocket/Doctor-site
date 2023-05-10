@@ -1,37 +1,106 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/esm/Button';
 import './auth.css';
 import NavLink from 'react-bootstrap/esm/NavLink';
 import LoginImage from '../../assets/login_two_one.png';
-import axios from 'axios';
+
+import { UserContext } from '../../App';
+
+// import axios from 'axios';
 // import Cookies from 'js-cookie';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const navigate = useNavigate();
+    const { dispatch } = useContext(UserContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+
+    // const handleLogin = async (e) => {
+    //     e.preventDefault();
+
+    //     axios.post('http://localhost:5000/login', {
+    //         email,
+    //         password,
+    //     })
+    //         .then((response) => {
+    //             console.log('Login Successfully');
+    //             // console.log(response);
+    //             const token = response.data.token;
+    //             console.log(token);
+    //             navigate('/');
+    //         })
+    //         .catch((error) => {
+    //             console.log('Problem in the Login ' + error);
+    //             // Display error message to the user
+    //         });
+    // };
+
+
+    // const handleLoginTwo = async (e) => {
+    //     e.preventDefault();
+
+    //     try {
+    //         const res = await fetch('/login', {
+    //             method: "POST",
+    //             headers: {
+    //                 "Content-Type": "Application/json",
+    //             },
+    //             credentials: "include",
+    //             body: JSON.stringify({
+    //                 email,
+    //                 password
+    //             })
+    //         })
+
+    //         const data = await res.json();
+    //         console.log(data);
+
+    //         if (res.status === 400 || !data) {
+    //             window.alert("Please fill all the fields");
+    //             console.log("Pleaes fill all the fields");
+    //         } else {
+    //             // dispatch({ type: 'USER', payload: true })
+    //             window.alert("Login Successfully");
+    //             console.log("Login Successfully");
+    //             navigate('/blog');
+    //         }
+
+    //     } catch (error) {
+    //         console.log("Login Error " + error);
+    //     }
+
+    // }
 
 
     const handleLogin = async (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:5000/login', {
-            email,
-            password,
-        })
-            .then((response) => {
-                console.log('Login Successfully');
-                // console.log(response);
-                const token = response.data.token;
-                console.log(token);
-                navigate('/');
+        const response = await fetch('/login', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email,
+                password
             })
-            .catch((error) => {
-                console.log('Problem in the Login ' + error);
-                // Display error message to the user
-            });
-    };
+        })
+
+        const data = await response.json();
+        console.log(data);
+
+        if (response.status === 400 || !data) {
+            window.alert("Please fill all the fields");
+            console.log("Pleaes fill all the fields");
+        } else {
+            dispatch({ type: 'USER', payload: true })
+            window.alert("Login Successfully");
+            console.log("Login Successfully");
+            navigate('/');
+        }
+    }
 
     const doctorLogin = () => {
         navigate('/adminLogin');

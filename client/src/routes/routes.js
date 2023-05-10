@@ -34,6 +34,7 @@ import Thanks from "../extra/Thanks/Thanks";
 import Register from "../pages/Auth/Register";
 import Login from "../pages/Auth/Login";
 import AdminLogin from "../pages/Auth/AdminLogin";
+import Logout from "../pages/Auth/Logout";
 
 const routes = () => {
     return (
@@ -73,6 +74,7 @@ const routes = () => {
 
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/logout" element={<Logout />} />
 
                 <Route path="/thanks" element={<Thanks />} />
                 <Route path="/*" element={<PageNot />} />

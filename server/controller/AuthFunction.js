@@ -105,7 +105,7 @@ const LoginFunction = async (req, res) => {
             return res.status(402).json({ message: "Incorrect Password" });
         }
 
-        const token = jwt.sign({ _id: user._id }, process.env.SECRET);
+        const token = await jwt.sign({ _id: user._id }, process.env.SECRET);
         console.log(token);
 
         res.cookie("token", token, {

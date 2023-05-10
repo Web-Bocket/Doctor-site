@@ -1,64 +1,267 @@
-import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/esm/Button';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './navbar.css';
+import { NavLink } from 'react-router-dom';
 import MyVerticallyCenteredModal from './components/model';
+import { UserContext } from '../../App';
 
 function BasicExample() {
-
+    const { state } = useContext(UserContext);
     const [modalShow, setModalShow] = React.useState(false);
 
+    const RenderMenu = () => {
+        if (state) {
+            return (
+                <>
+                    <li className="nav-item">
+                        <NavLink className="nav-link active" aria-current="page" to="/" >Home</NavLink>
+                    </li>
+
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/about" >About</NavLink>
+                    </li>
+
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/form" >Online Consultation</NavLink>
+                    </li>
+
+                    <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Treatments
+                        </a>
+                        <ul className="dropdown-menu">
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/diabetes" >Diabetes</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/thyroid" >Thyroid</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/woman" >Woman's Health</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/arthritits" >Arthritis</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/infertility" >Infertility</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/sinusitis" >Sinusitis</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/hypertension" >Hypertension</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/skin" >Skin</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/hair" >Hair Loss</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/allergy" >Allergy</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/asthma" >Asthma</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/migraine" >Migraine</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/spondylitis" >Spondylitis</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/children" >Children</NavLink>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Gallery
+                        </a>
+                        <ul className="dropdown-menu">
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/gallery" >Media</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/video" >Videos</NavLink>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/blog" >Blog</NavLink>
+                    </li>
+
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/enquiry" >Inquiry</NavLink>
+                    </li>
+
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/contact" >Contact us</NavLink>
+                    </li>
+
+                    <li className="nav-item">
+                        <NavLink><Button className='nav-link' onClick={() => setModalShow(true)}>Book Appointment</Button></NavLink>
+                    </li>
+
+                    <MyVerticallyCenteredModal
+                        show={modalShow}
+                        onHide={() => setModalShow(false)} />
+
+                    <li className="nav-item">
+                        <NavLink to="/logout"><Button className='nav-link'>Logout</Button></NavLink>
+                    </li>
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <li className="nav-item">
+                        <NavLink className="nav-link active" aria-current="page" to="/" >Home</NavLink>
+                    </li>
+
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/about" >About</NavLink>
+                    </li>
+
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/login" >Online Consultation</NavLink>
+                    </li>
+
+                    <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Treatments
+                        </a>
+                        <ul className="dropdown-menu">
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/diabetes" >Diabetes</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/thyroid" >Thyroid</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/woman" >Woman's Health</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/arthritits" >Arthritis</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/infertility" >Infertility</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/sinusitis" >Sinusitis</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/hypertension" >Hypertension</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/skin" >Skin</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/hair" >Hair Loss</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/allergy" >Allergy</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/asthma" >Asthma</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/migraine" >Migraine</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/spondylitis" >Spondylitis</NavLink>
+                            </li>
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/children" >Children</NavLink>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Gallery
+                        </a>
+                        <ul className="dropdown-menu">
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/gallery" >Media</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link-down" to="/video" >Videos</NavLink>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/login" >Blog</NavLink>
+                    </li>
+
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/login" >Inquiry</NavLink>
+                    </li>
+
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/contact" >Contact us</NavLink>
+                    </li>
+
+                    <li className="nav-item">
+                        <NavLink to="/login"><Button className='nav-link' >Book Appointment</Button></NavLink>
+                    </li>
+
+                    <MyVerticallyCenteredModal
+                        show={modalShow}
+                        onHide={() => setModalShow(false)} />
+
+                    <li className="nav-item">
+                        <NavLink to="/login"><Button className='nav-link'>Login</Button></NavLink>
+                    </li>
+
+                </>
+            )
+        }
+    }
+
     return (
-        <Navbar className='navbar-parent nav' style={{ padding: "20px" }} variant="dark" expand="lg">
-            <Container>
-                <Navbar.Brand style={{ fontWeight: "bold" }} href="/">Medical Website</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto">
-                        <Nav.Link style={{ fontWeight: "bold" }} href="/">Home</Nav.Link>
-                        <Nav.Link style={{ fontWeight: "bold" }} href="/about">About</Nav.Link>
-                        <NavDropdown style={{ fontWeight: "bold" }} title="Treatments" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/diabetes">Diabetes</NavDropdown.Item>
-                            <NavDropdown.Item href="/thyroid">Thyroid</NavDropdown.Item>
-                            <NavDropdown.Item href="/women">Woman's Health</NavDropdown.Item>
-                            <NavDropdown.Item href="/arthritits">Arthritis</NavDropdown.Item>
-                            <NavDropdown.Item href="/infertility">Infertility</NavDropdown.Item>
-                            <NavDropdown.Item href="/sinusitis">Sinusitis</NavDropdown.Item>
-                            <NavDropdown.Item href="/hypertension">Hypertension</NavDropdown.Item>
-                            <NavDropdown.Item href="/skin">Skin</NavDropdown.Item>
-                            <NavDropdown.Item href="/hair">Hair Loss</NavDropdown.Item>
-                            <NavDropdown.Item href="/allergy">Allergy</NavDropdown.Item>
-                            <NavDropdown.Item href="/asthma">Asthma</NavDropdown.Item>
-                            <NavDropdown.Item href="/migraine">Migraine</NavDropdown.Item>
-                            <NavDropdown.Item href="/spondylitis">Spondylitis</NavDropdown.Item>
-                            <NavDropdown.Item href="/children">Children Diseases</NavDropdown.Item>
-                        </NavDropdown>
-                        <Nav.Link style={{ fontWeight: "bold" }} href="/form">Online Consultation</Nav.Link>
-                        <NavDropdown style={{ fontWeight: "bold" }} title="Gallery" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/gallery">Media</NavDropdown.Item>
-                            <NavDropdown.Item href="/video">Videos</NavDropdown.Item>
-                        </NavDropdown>
-                        <Nav.Link style={{ fontWeight: "bold" }} href="/blog">Blog</Nav.Link>
-                        <Nav.Link style={{ fontWeight: "bold" }} href="/enquiry">Inquiry</Nav.Link>
-                        <Nav.Link style={{ fontWeight: "bold" }} href="/contact">Contact us</Nav.Link>
-
-                        <Button style={{ backgroundColor: "white", fontWeight: "bold", marginLeft: "2px", marginRight: "2px", color: "black", border: "2px solid white" }} onClick={() => setModalShow(true)}>Book Appointment</Button>
-
-                        <Button style={{ backgroundColor: "white", fontWeight: "bold", marginLeft: "2px", marginRight: "2px", color: "black", border: "2px solid white" }} href='/login'>Login</Button>
-
-                        <MyVerticallyCenteredModal
-                            show={modalShow}
-                            onHide={() => setModalShow(false)} />
-
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
-
-
+        <nav className="navbar navbar-expand-lg">
+            <div className="container-fluid">
+                <NavLink to="/" className="navbar-brand" style={{ color: "white", fontWeight: "bold" }} href="/">Medical Website</NavLink>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <RenderMenu></RenderMenu>
+                    </ul>
+                </div>
+            </div>
+        </nav >
     );
 }
 
