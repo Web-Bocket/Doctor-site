@@ -4,7 +4,6 @@ import './auth.css';
 import NavLink from 'react-bootstrap/esm/NavLink';
 import LoginImage from '../../assets/login_two_one.png';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -26,11 +25,10 @@ const Register = () => {
     const [password, setPassword] = useState("");
 
 
-    const handleRegister = (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault();
 
         if (!patientName || !city || !mobileNumber || !email || !state || !pinNo || !bloodGroup || !diseases || !category || !password) {
-            // window.alert("Please fill in all required fields.");
             toast.info('Please fill all the fields', {
                 position: "top-right",
                 autoClose: 5000,
@@ -48,7 +46,6 @@ const Register = () => {
         // Check if email address is valid
         const emailPattern = /\S+@\S+\.\S+/;
         if (!emailPattern.test(email)) {
-            // window.alert("Please enter a valid email address.");
             toast.info('Please enter a valid email address', {
                 position: "top-right",
                 autoClose: 5000,
@@ -76,33 +73,42 @@ const Register = () => {
                 progress: undefined,
                 theme: "dark",
             });
-            // window.alert("Please enter the correct phone number")
             return;
         }
 
-        axios.post("http://localhost:5000/register", {
-            patientName,
-            patientCode,
-            city,
-            photo,
-            mobileNumber,
-            email,
-            state,
-            pinNo,
-            bloodGroup,
-            diseases,
-            category,
-            password,
-        }).then((res) => {
 
-            if (res.status == 401) {
-                console.log("This email already exists");
-            }
-            console.log("Register Successfully");
-            navigate("/login");
-        }).catch((err) => {
-            console.log("Problem in the Register " + err);
+
+        const response = await fetch('/register', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                patientName,
+                patientCode,
+                city,
+                photo,
+                mobileNumber,
+                email,
+                state,
+                pinNo,
+                bloodGroup,
+                diseases,
+                category,
+                password,
+            })
         })
+
+        const data = await response.json();
+        console.log(data);
+
+        if (response.status === 401) {
+            window.alert(data.message);
+        } else {
+            window.alert(data.message);
+            console.log("Login Successfully");
+            navigate('/login');
+        }
     }
 
     return (
@@ -112,9 +118,7 @@ const Register = () => {
                 <div className='input_login_div'>
                     <h1>Register</h1>
                     <input type='text' placeholder='Patient Name' onChange={(e) => setPatientName(e.target.value)} />
-                    {/* <input type='text' placeholder='Patient Code' onChange={(e) => setPatientCode(e.target.value)} /> */}
                     <input type='text' placeholder='City' onChange={(e) => setCity(e.target.value)} />
-                    {/* <input type='file' placeholder='Photo' onChange={(e) => setPhoto(e.target.value)} /> */}
                     <input type='text' placeholder='Mobile No' onChange={(e) => setMobile(e.target.value)} />
                     <input type='email' placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
                     <input type='text' placeholder='State' onChange={(e) => setState(e.target.value)} />
@@ -142,7 +146,6 @@ const Register = () => {
 
                         </select>
                     </label>
-                    {/* <input type='text' placeholder='Diseases' onChange={(e) => setDiseases(e.target.value)} /> */}
                     <input type='text' placeholder='Category' onChange={(e) => setCategory(e.target.value)} />
                     <input type='password' placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
 

@@ -37,6 +37,7 @@ const RegisterFunction = async (req, res) => {
         }
 
         const existEmail = await UserModel.findOne({ email: email });
+
         if (existEmail) {
             return res
                 .status(401)
@@ -74,8 +75,9 @@ const RegisterFunction = async (req, res) => {
 
             res.status(200).json({ message: "User registered successfully" });
         } else {
-            res.status(500).json({ error: "Failed to save user" });
+            res.status(500).json({ error: "Internal Server Error" });
         }
+
     } catch (error) {
         console.log("This is the register error " + error);
         res.status(500).json({ error: "Failed to register user" });
@@ -110,7 +112,8 @@ const LoginFunction = async (req, res) => {
 
         res.cookie("token", token, {
             httpOnly: true,
-            expires: new Date(Date.now() + 6000000),
+            maxAge: 60 * 60 * 1000,
+            secure: false,
         });
 
         return res

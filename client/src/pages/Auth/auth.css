@@ -35,6 +35,7 @@
     margin: 20px;
     align-items: center;
     justify-self: center;
+    text-align: center;
 }
 
 .input_login_div input {

@@ -8,7 +8,6 @@ import React, { createContext, useReducer } from 'react';
 
 export const UserContext = createContext();
 
-
 function App() {
 
   const [state, dispatch] = useReducer(reducer, initialState);
