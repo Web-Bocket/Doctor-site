@@ -6,6 +6,8 @@ import MyVerticallyCenteredModal from './components/model';
 import { Context } from '../../index';
 import axios from 'axios';
 
+import doctorLogo from '../../assets/bg_doc.png';
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -42,7 +44,7 @@ function BasicExample() {
     return (
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
-                <NavLink to="/" className="navbar-brand" style={{ color: "white", fontWeight: "bold" }} href="/">Medical Website</NavLink>
+                <NavLink to="/" style={{ objectFit:"contain", width:"100px" }} href="/"><img src={doctorLogo} /></NavLink>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>

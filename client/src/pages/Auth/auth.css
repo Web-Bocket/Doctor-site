@@ -4,9 +4,14 @@
 3. d4a276 
 4. ffedd8 */
 
+/* This is new color combination 
+1. #1B1464
+2. #0077b6
+3. #00b4d8
+4. #caf0f8 */
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 /* font-family: 'Noto Sans', sans-serif; */
-
 
 .login_parent {
     background-color: white;
@@ -15,12 +20,11 @@
     font-family: 'Noto Sans', sans-serif;
 }
 
-
 .login_div {
     width: 65%;
     margin: auto;
     display: flex;
-    background-color: #ffedd8;
+    background-color: #caf0f8;
     border-radius: 20px;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -51,14 +55,13 @@
     border-radius: 10px;
 }
 
-
 .input_login_div Button {
     width: 100%;
     padding: 10px;
     margin: 5px;
     border-radius: 10px;
-    background-color: #583101;
-    border: 1px solid #583101;
+    background-color: #0077b6;
+    border: 1px solid #0077b6;
 }
 
 .input_login_div p {
@@ -67,10 +70,9 @@
 }
 
 .input_login_div .nav_link {
-    color: #583101;
+    color: #1B1464;
     font-weight: 600;
 }
-
 
 .img_login_div {
     width: 50%;
@@ -116,8 +118,4 @@
     .img_login_div img {
         width: 90%;
     }
-
-
-
-
 }

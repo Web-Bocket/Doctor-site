@@ -1,3 +1,13 @@
+/* This is new color combination 
+1. #1B1464
+2. #0077b6
+3. #00b4d8
+4. #caf0f8 */
+
+
+
+
+
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
 import image1 from '../../../assets/medical_one.jpg'
@@ -37,7 +47,6 @@ const Casroul = () => {
                     <img
                         className="d-block carosusel_img w-100"
                         src={womanTwo}
-
                         alt="First slide"
                     />
                     <div style={{ position: 'absolute', color: "white", top: '50%', left: '30%', transform: 'translate(-50%, -50%)' }} className="d-flex flex-column align-items-center">

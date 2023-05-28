@@ -1,10 +1,16 @@
+/* This is new color combination 
+1. #1B1464
+2. #0077b6
+3. #00b4d8
+4. #caf0f8 */
+
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 /* font-family: 'Noto Sans', sans-serif; */
 
-
 .error_parent {
     font-family: 'Noto Sans', sans-serif;
-    background-color: #ffedd8;
+    background-color: #caf0f8;
 }
 
 .error_div {
@@ -18,7 +24,7 @@
 .error_div h1 {
     font-size: 10em;
     font-weight: bold;
-    color: #583101;
+    color: #0077b6;
 }
 
 .error_div h3 {
@@ -31,7 +37,7 @@
 
 .error_div button {
     margin: 5px;
-    background-color: #583101;
+    background-color: #0077b6;
     padding: 10px;
     color: white;
     font-weight: bold;
@@ -39,6 +45,6 @@
 }
 
 .error_div button:hover {
-    background-color: #d4a276;
-    color: #583101;
+    background-color: #00b4d8;
+    color: #0077b6;
 }

@@ -1,8 +1,12 @@
+/* This is new color combination 
+1. #1B1464
+2. #0077b6
+3. #00b4d8
+4. #caf0f8 */
+
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 /* font-family: 'Noto Sans', sans-serif; */
-
-
-
 
 .parent_about {
     /* background-color: yellow; */
@@ -15,17 +19,20 @@
     width: 65%;
     margin: auto;
     display: flex;
-    background-color: #ffedd8;
+    background-color: #caf0f8;
     border-radius: 20px 0px 20px 0px;
     padding: 10px;
     align-items: center;
     margin-top: 50px;
 }
 
-
 .parent_text {
     width: 50%;
     margin: 10px;
+}
+
+.parent_text h1{
+    color: #1B1464;
 }
 
 .parent_text p {
@@ -40,9 +47,6 @@
 .parent_img img{
     border-radius: 20px 0px 20px 0px;
 }
-
-
-
 
 
 /* 1550 This is for the PC View */

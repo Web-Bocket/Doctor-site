@@ -1,10 +1,16 @@
+/* This is new color combination 
+1. #1B1464
+2. #0077b6
+3. #00b4d8
+4. #caf0f8 */
+
 .thanks_parent{
     text-align: center;
     padding: 20px;
     height: 90vh;
     display: flex;
     align-items: center;
-    background-color: #ffedd8;
+    background-color: #caf0f8;
 }
 
 .thanks_div{
@@ -22,11 +28,10 @@
 }
 
 .thanks_div Button{
-    background-color: #583101;
-    border: #583101;
+    background-color: #0077b6;
+    border: #0077b6;
     font-weight: bold;
 }
-
 
 /* 1550 This is for the PC View */
 @media (max-width: 1550px) {}
@@ -37,14 +42,13 @@
 /* 910 - This is for the Mobile View */
 @media (max-width: 910px) {
 
-
     .thanks_parent{
         text-align: center;
         padding: 20px;
         height: 60vh;
         display: flex;
         align-items: center;
-        background-color: #ffedd8;
+        background-color: #caf0f8;
     }
 
     .thanks_div{

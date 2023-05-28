@@ -1,9 +1,12 @@
+/* This is new color combination 
+1. #1B1464
+2. #0077b6
+3. #00b4d8
+4. #caf0f8 */
+
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 /* font-family: 'Noto Sans', sans-serif; */
-
-
-
-
 
 .treatment_parent {
     /* background-color: yellow; */
@@ -16,7 +19,7 @@
     display: flex;
     width: 65%;
     margin: auto;
-    background-color: #ffedd8;
+    background-color: #caf0f8;
     border-radius: 20px 0px 20px 0px;
     padding: 20px;
     justify-content: space-between;
@@ -44,7 +47,7 @@
     display: flex;
     width: 65%;
     margin: auto;
-    background-color: #ffedd8;
+    background-color: #caf0f8;
     padding: 20px;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -56,7 +59,7 @@
     display: flex;
     width: 65%;
     margin: auto;
-    background-color: #ffedd8;
+    background-color: #caf0f8;
     padding: 40px;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -75,7 +78,7 @@
     display: flex;
     width: 65%;
     margin: auto;
-    background-color: #ffedd8;
+    background-color: #caf0f8;
     flex-direction: column;
     padding: 40px;
     margin-top: 50px;
