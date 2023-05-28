@@ -3,6 +3,8 @@ import axios from 'axios';
 import './enquiry.css';
 import { Navigate, useNavigate } from 'react-router-dom';
 
+import { ToastContainer, toast, useToast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Enquiry = () => {
   const navigate = useNavigate();
@@ -50,6 +52,7 @@ const Enquiry = () => {
     return formIsValid;
   };
 
+
   const handleSubmit = () => {
     if (validateForm()) {
       axios
@@ -58,16 +61,23 @@ const Enquiry = () => {
           phone,
           email,
           problem,
+        }, {
+          withCredentials: true
         })
         .then(() => {
           navigate('/thanks');
-          console.log("Message Send Successfully");
+          console.log("Message Sent Successfully");
+          toast.info('Enquiry Message Sent Successfully', { theme: "dark" });
         })
         .catch((err) => {
+          // window.alert("Login First");
           console.log({ Error: err.message });
+          toast.error('Login First', { theme: "dark" });
+          return;
         });
     }
   };
+  
 
   return (
     <div className='enquiry_parent'>
@@ -156,6 +166,7 @@ const Enquiry = () => {
 
         </table>
       </div>
+      <ToastContainer />
     </div>
   )
 }

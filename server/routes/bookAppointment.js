@@ -4,7 +4,7 @@ const { AppointmentPostFun, AppointmentGetFun, AppointmentDeleteFun } = require(
 const isAuthenticated = require("../middleware/Auth");
 
 router.post("/appointment", isAuthenticated, AppointmentPostFun);
-router.get("/appointment", isAuthenticated,  AppointmentGetFun);
+router.get("/appointment", AppointmentGetFun);
 router.delete('/appointment/:id', AppointmentDeleteFun);
 
 

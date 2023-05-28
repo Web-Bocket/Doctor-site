@@ -5,7 +5,7 @@ const isAuthenticated = require("../middleware/Auth");
 
 
 router.post('/consultation', isAuthenticated,  PostConsultFunction);
-router.get('/consultation', isAuthenticated,  ConsultationGetFun);
+router.get('/consultation', ConsultationGetFun);
 router.delete("/consultation/:id", ConsultationDeleteFun);
 
 module.exports = router;

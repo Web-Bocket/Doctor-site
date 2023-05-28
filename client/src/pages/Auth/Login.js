@@ -19,7 +19,7 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            await axios.post("http://localhost:5000/login", {
+          const {data} =   await axios.post("http://localhost:5000/login", {
                 email,
                 password
             }, {
@@ -28,10 +28,12 @@ const Login = () => {
                 },
                 withCredentials: true,
             });
+
+            console.log("Login Data " + data.message);
             setIsAuthenticated(true);
             // window.alert("Login Successfully");
 
-            toast.success('Login Successfully', {
+            toast.success(data.message, {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,

@@ -24,6 +24,8 @@ app.use(require('./routes/enquiry'));
 app.use(require('./routes/bookAppointment'));
 app.use(require('./routes/login'));
 
+app.use(require('./middleware/Auth'));
+
 
 // This is for the Database
 require('./Database/database');

@@ -91,6 +91,8 @@ const Form = () => {
             return;
         }
 
+
+
         axios.post("http://localhost:5000/consultation", {
             firstName,
             lastName,
@@ -105,14 +107,22 @@ const Form = () => {
             state,
             country,
             problem
-        }).then(() => {
-            // window.alert("Form Submitted Successfully");
-            navigate('/thanks');
-            console.log("Form Submitted Successfully");
-        }).catch((err) => {
-            console.log("Error Occured " + err.message);
-            window.alert("Login First");
-        })
+        }, { withCredentials: true })
+            .then(() => {
+                navigate('/thanks');
+                console.log("Form Submitted Successfully");
+
+                toast.info('Form Submitted Successfully', { theme: "dark" });
+                return;
+            })
+            .catch((err) => {
+                console.log("Error Occurred: " + err.message);
+                window.alert("Login First");
+
+                toast.error('Login First', { theme: "dark" });
+                return;
+            });
+
     }
 
     return (

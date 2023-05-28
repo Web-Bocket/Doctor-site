@@ -4,7 +4,6 @@ import './auth.css';
 import LoginImage from '../../assets/login_two_one.png';
 import { useNavigate } from 'react-router-dom';
 
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -13,7 +12,6 @@ const AdminLogin = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
 
   const handleAdminLogin = async (e) => {
     e.preventDefault();
@@ -25,9 +23,7 @@ const AdminLogin = () => {
       console.log('Login Successfully');
       window.alert("Login Successfull");
       navigate('/admin/u=admin123&p=admin123');
-
     }
-
   };
 
   return (
