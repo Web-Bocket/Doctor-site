@@ -111,7 +111,7 @@ const Form = () => {
             console.log("Form Submitted Successfully");
         }).catch((err) => {
             console.log("Error Occured " + err.message);
-            window.alert("An error occurred: " + err.response.data);
+            window.alert("Login First");
         })
     }
 

@@ -13,7 +13,7 @@ function MyVerticallyCenteredModal(props) {
     const [phone, setYourPhone] = useState("");
     const [message, setMessage] = useState("");
     const [patientStatus, setPatientStatus] = useState("");
-    const [selectDoctor, setSelectDoctor] = useState("");
+    const [mode, setMode] = useState("");
     const [gender, setGender] = useState("");
 
     const handleClearFields = () => {
@@ -24,13 +24,14 @@ function MyVerticallyCenteredModal(props) {
         setYourPhone("");
         setMessage("");
         setPatientStatus("");
+        setMode("");
         setGender("");
     };
 
 
     const handleSubmit = () => {
         // Check if all required fields are filled
-        if (!name || !email || !date || !message || !patientStatus || !selectDoctor || !gender) {
+        if (!name || !city || !email || !date || !phone || !message || !patientStatus || !mode || !gender) {
             // window.alert("Please fill in all required fields.");
 
             toast.info('Please fill all the fields', {
@@ -91,7 +92,7 @@ function MyVerticallyCenteredModal(props) {
             phone,
             message,
             patientStatus,
-            selectDoctor,
+            mode,
             gender,
         }).then(() => {
             handleClearFields();
@@ -105,9 +106,18 @@ function MyVerticallyCenteredModal(props) {
                 progress: undefined,
                 theme: "dark",
             });
-            // window.alert("Appointment Book Successfully");
             console.log("Appointment Book Successfully");
         }).catch((err) => {
+            toast.error('Login First', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
             console.log("Error Occured " + err.message);
         })
     }
@@ -141,7 +151,7 @@ function MyVerticallyCenteredModal(props) {
 
                 <label className='input_radio'>
                     Select Mode:
-                    <select required value={patientStatus} onChange={(e) => setPatientStatus(e.target.value)}>
+                    <select required value={mode} onChange={(e) => setMode(e.target.value)}>
                         <option value="">Select Appointment Mode</option>
                         <option value="Old">Online</option>
                         <option value="New">Offline</option>
@@ -149,7 +159,7 @@ function MyVerticallyCenteredModal(props) {
                 </label>
 
                 <label className='input_radio'>
-                    Choose an option:
+                    Select Gender:
                     <select required value={gender} onChange={(e) => setGender(e.target.value)}>
                         <option value="">Select Gender</option>
                         <option value="Male">Male</option>

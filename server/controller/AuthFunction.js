@@ -36,9 +36,9 @@ const RegisterFunction = async (req, res) => {
             return res.status(400).json({ error: "Please fill all the fields" });
         }
 
-        const existEmail = await UserModel.findOne({ email: email });
+        let user = await UserModel.findOne({ email: email });
 
-        if (existEmail) {
+        if (user) {
             return res
                 .status(401)
                 .json({ message: "This email already exists. Please log in instead." });
@@ -46,7 +46,7 @@ const RegisterFunction = async (req, res) => {
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        const user = new UserModel({
+        user = await UserModel.create({
             patientName,
             // patientCode,
             city,
@@ -61,22 +61,18 @@ const RegisterFunction = async (req, res) => {
             password: hashedPassword
         });
 
-        const savedUser = await user.save();
 
-        if (savedUser) {
-            const token = jwt.sign({ _id: savedUser._id }, process.env.SECRET, {
-                expiresIn: "1h"
-            });
+        const token = jwt.sign({ _id: user._id }, process.env.SECRET);
+        console.log(token);
 
-            res.cookie("token", token, {
-                // httpOnly: true,
-                maxAge: 60 * 60 * 1000 // 1 hour
-            });
+        res.status(200).cookie("token", token, {
+            httpOnly: true,
+            maxAge: 60 * 60 * 1000,
+        }).json({
+            success: true,
+            message: "User registered successfully"
+        });
 
-            res.status(200).json({ message: "User registered successfully" });
-        } else {
-            res.status(500).json({ error: "Internal Server Error" });
-        }
 
     } catch (error) {
         console.log("This is the register error " + error);
@@ -88,42 +84,60 @@ const RegisterFunction = async (req, res) => {
 // LOGIN User
 const LoginFunction = async (req, res) => {
     try {
+
         const { email, password } = req.body;
 
         if (!email || !password) {
-            return res.status(400).json({ error: "Please fill all the fields" });
+            return res.status(400).json({
+                success: false,
+                message: "Please fill all the fields"
+            });
         }
 
         const user = await UserModel.findOne({ email: email });
+
         if (!user) {
             return res
                 .status(401)
-                .json({ message: "This email does not exist. Please register first." });
+                .json({
+                    success: false,
+                    message: "Invalid Email and Password"
+                });
         }
 
         const isMatch = await bcrypt.compare(password, user.password);
 
         if (!isMatch) {
-            return res.status(402).json({ message: "Incorrect Password" });
+            return res.status(402).json({
+                success: false,
+                message: "Invalid Email and Password"
+            });
         }
 
-        const token = await jwt.sign({ _id: user._id }, process.env.SECRET);
+        const token = jwt.sign({ _id: user._id }, process.env.SECRET);
         console.log(token);
 
-        res.cookie("token", token, {
+        res.status(200).cookie("token", token, {
             httpOnly: true,
             maxAge: 60 * 60 * 1000,
-            secure: false,
         });
 
         return res
             .status(200)
-            .json({ message: "User Logged in Successfully" });
+            .json({
+                success: true,
+                message: "User Logged in Successfully"
+            });
     } catch (error) {
         console.log(error);
-        return res.status(500).json({ error: "Internal Server Error" });
+        return res.status(500).json({
+            success: false,
+            message: "Internal Server Error"
+        });
     }
 };
+
+
 
 // LOGOUT User
 const LogoutFunction = async (req, res) => {
@@ -131,10 +145,16 @@ const LogoutFunction = async (req, res) => {
         res.cookie("token", null, {
             expires: new Date(Date.now())
         });
-        return res.status(200).json({ message: "User Logged out Successfully" });
+        return res.status(200).json({
+            success: true,
+            message: "User Logged out Successfully"
+        });
     } catch (error) {
-        console.log("Error while logging out: ", error);
-        return res.status(500).json({ error: "An error occurred while logging out" });
+
+        return res.status(500).json({
+            success: false,
+            message: "Internal Server Issue " + error
+        });
     }
 };
 

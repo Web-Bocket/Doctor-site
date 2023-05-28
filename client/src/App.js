@@ -1,24 +1,31 @@
-import './App.css';
 import Routes from './routes/routes';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
-import { initialState, reducer } from './reducer/UseReducer';
-import React, { createContext, useReducer } from 'react';
-
-export const UserContext = createContext();
+import React, { useContext, useEffect } from 'react';
+import { Context } from './index';
+import axios from 'axios';
 
 function App() {
 
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const { setUser, setIsAuthenticated } = useContext(Context);
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/user", {
+      withCredentials: true,
+    })
+      .then((res) => {
+        setUser(res.data.user);
+        setIsAuthenticated(true);
+      })
+      .catch((error) => {
+        setUser({});
+        setIsAuthenticated(false);
+      })
+  }, []);
 
   return (
     <div>
-      <UserContext.Provider value={{ state, dispatch }}>
-        <Routes />
-      </UserContext.Provider>
+      <Routes />
     </div>
-
   );
 }
 

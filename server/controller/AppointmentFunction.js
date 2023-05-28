@@ -4,9 +4,9 @@ const AppointmentModel = require('../models/AppointmentModel');
 const AppointmentPostFun = async (req, res) => {
     try {
 
-        const { name, email, city, date, phone, gender, patientStatus, message } = req.body;
+        const { name, email, city, date, phone, gender, patientStatus, mode, message } = req.body;
 
-        if (!name || !email || !city || !date || !phone || !gender || !patientStatus || !message) {
+        if (!name || !email || !city || !date || !phone || !gender || !mode || !patientStatus || !message) {
             return res.status(401).json({ message: "Please fill all the fields" });
         }
 
@@ -23,6 +23,7 @@ const AppointmentPostFun = async (req, res) => {
             date,
             phone,
             gender,
+            mode,
             patientStatus,
             message
         });

@@ -3,50 +3,60 @@ import Button from 'react-bootstrap/esm/Button';
 import './auth.css';
 import NavLink from 'react-bootstrap/esm/NavLink';
 import LoginImage from '../../assets/login_two_one.png';
-import { UserContext } from '../../App';
 import { useNavigate } from 'react-router-dom';
-
+import axios from 'axios';
+import { Context } from '../../index';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const navigate = useNavigate();
-    const { dispatch } = useContext(UserContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    const { isAuthenticated, setIsAuthenticated } = useContext(Context);
 
     const handleLogin = async (e) => {
         e.preventDefault();
 
-        const response = await fetch('/login', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
+        try {
+            await axios.post("http://localhost:5000/login", {
                 email,
                 password
-            })
-        })
+            }, {
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                withCredentials: true,
+            });
+            setIsAuthenticated(true);
+            // window.alert("Login Successfully");
 
-        const data = await response.json();
-        console.log(data);
+            toast.success('Login Successfully', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+            return;
 
-        if (response.status === 400 || !data) {
-            window.alert("Please fill all the fields");
-            console.log("Pleaes fill all the fields");
-        } else {
-            dispatch({ type: 'USER', payload: true })
-            window.alert("Login Successfully");
-            console.log("Login Successfully");
-            navigate('/');
+        } catch (error) {
+            window.alert("Login Failed");
+            setIsAuthenticated(false);
         }
+    }
+
+    if (isAuthenticated) {
+        navigate('/');
     }
 
     const doctorLogin = () => {
         navigate('/adminLogin');
     }
 
-    
     return (
         <div className="login_parent">
             <div className="login_div">
@@ -81,6 +91,7 @@ const Login = () => {
                 </div>
 
             </div>
+            <ToastContainer />
         </div>
     );
 };

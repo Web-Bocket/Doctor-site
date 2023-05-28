@@ -14,8 +14,7 @@ app.use(cors({
   origin: [process.env.FRONTEND_URI],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true, // Just want to send the cookies to the front-end
-})
-);
+}));
 
 
 // This is for the Routes

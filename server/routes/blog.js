@@ -9,5 +9,4 @@ router.get("/blog/:id", BlogOneFun);
 router.post('/blog', BlogPostFun);
 router.delete("/blog/:id", BlogDeleteFun);
 
-
 module.exports = router;
