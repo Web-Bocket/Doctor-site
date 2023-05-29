@@ -41,13 +41,11 @@ const AppointmentPostFun = async (req, res) => {
     }
 }
 
-
 const AppointmentGetFun = async (req, res) => {
-
     try {
         const AppointmentData = await AppointmentModel.find();
         res.status(200).send(AppointmentData);
-
+        // res.render('appointment', { appointments: AppointmentData });
     } catch (error) {
         console.log("Error while getting the Appointment Data" + error);
     }

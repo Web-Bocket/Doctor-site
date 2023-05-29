@@ -7,5 +7,4 @@ router.post("/appointment", isAuthenticated, AppointmentPostFun);
 router.get("/appointment", AppointmentGetFun);
 router.delete('/appointment/:id', AppointmentDeleteFun);
 
-
 module.exports = router;

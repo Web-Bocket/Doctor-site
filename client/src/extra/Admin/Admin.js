@@ -28,7 +28,9 @@ const Admin = () => {
     const [blogDescription, setBlogDescription] = useState("");
 
     useEffect(() => {
-        axios.get('http://localhost:5000/appointment')
+        axios.get('http://localhost:5000/appointment', {
+            withCredentials: true,
+        })
             .then(response => {
                 setAppointments(response.data);
             })
@@ -39,7 +41,9 @@ const Admin = () => {
 
 
         // useEffect(() => {
-        axios.get('http://localhost:5000/consultation')
+        axios.get('http://localhost:5000/consultation', {
+            withCredentials: true,
+        })
             .then(response => {
                 setConsultation(response.data);
             })
@@ -50,7 +54,9 @@ const Admin = () => {
 
 
         // useEffect(() => {
-        axios.get('http://localhost:5000/enquiry')
+        axios.get('http://localhost:5000/enquiry', {
+            withCredentials: true,
+        })
             .then(response => {
                 setEnquiryData(response.data);
             })
@@ -61,7 +67,9 @@ const Admin = () => {
 
 
         // useEffect(() => {
-        axios.get('http://localhost:5000/blog')
+        axios.get('http://localhost:5000/blog', {
+            withCredentials: true,
+        })
             .then(response => {
                 setBlogData(response.data);
             })
@@ -70,7 +78,9 @@ const Admin = () => {
             });
 
         // This is for the User
-        axios.get('http://localhost:5000/user')
+        axios.get('http://localhost:5000/adminuser', {
+            withCredentials: true,
+        })
             .then(response => {
                 setUser(response.data);
             })

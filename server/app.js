@@ -23,8 +23,7 @@ app.use(require('./routes/consultation'));
 app.use(require('./routes/enquiry'));
 app.use(require('./routes/bookAppointment'));
 app.use(require('./routes/login'));
-
-app.use(require('./middleware/Auth'));
+app.use(require('./routes/admin'));
 
 
 // This is for the Database

@@ -1,0 +1,119 @@
+.recept {
+    background-color: #00b4d8;
+    padding: 50px;
+}
+
+.recept_data {
+    width: 50vw;
+    margin: auto;
+}
+
+.top_recept {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    background-color: green;
+    justify-content: space-around;
+}
+
+.top_left_recept h3 {
+    color: orange;
+}
+
+
+.top_left_recept p {
+    color: white;
+    font-weight: 400;
+    line-height: 0.2;
+    font-size: small;
+}
+
+.center_recept {
+    display: flex;
+    align-items: end;
+    justify-content: baseline;
+}
+
+.center_recept img {
+    width: 100px;
+}
+
+
+.top_right_recept p {
+    color: white;
+    font-weight: 400;
+    line-height: 0.2;
+    font-size: small;
+    margin-top: 5px;
+}
+
+
+.second_recept {
+    background-color: lightgreen;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+.second_recept p {
+    line-height: 0.4;
+    font-weight: 600;
+}
+
+.third_body_recept {
+    height: 500px;
+    background-color: aliceblue;
+}
+
+
+.third_body_recept .personal_details {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.personal_details p {
+    font-weight: 600;
+}
+
+.hr_recept {
+    border-top: 1.5px solid black;
+    opacity: 100%;
+}
+
+.third_body_recept .third_p {
+    text-align: center;
+    font-weight: 600;
+}
+
+.bottom_recept {
+    background-color: green;
+    text-align: center;
+    padding: 10px;
+}
+
+.bottom_recept h1 {
+    color: orange;
+    font-weight: 600;
+}
+
+.bottom_recept p {
+    color: white;
+    font-weight: 600;
+    line-height: 0.4;
+}
+
+
+.recept_download_button {
+    display: flex;
+    justify-content: center;
+}
+
+.recept_download_button button {
+    background-color: green;
+    color: orange;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+    font-weight: bold;
+}

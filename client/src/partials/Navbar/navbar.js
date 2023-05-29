@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/esm/Button';
 import React, { useContext } from 'react';
 import './navbar.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import MyVerticallyCenteredModal from './components/model';
 import { Context } from '../../index';
 import axios from 'axios';
@@ -13,9 +13,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 function BasicExample() {
+    const navigate = useNavigate();
     const [modalShow, setModalShow] = React.useState(false);
 
     const { isAuthenticated, setIsAuthenticated } = useContext(Context);
+
 
     const logoutHandler = async () => {
         try {
@@ -34,6 +36,7 @@ function BasicExample() {
                 progress: undefined,
                 theme: "dark",
             });
+            navigate('/');
             return;
 
         } catch (error) {
@@ -44,7 +47,7 @@ function BasicExample() {
     return (
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
-                <NavLink to="/" style={{ objectFit:"contain", width:"100px" }} href="/"><img src={doctorLogo} /></NavLink>
+                <NavLink to="/" style={{ objectFit: "contain", width: "100px" }} href="/"><img src={doctorLogo} /></NavLink>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -160,29 +163,20 @@ function BasicExample() {
                             show={modalShow}
                             onHide={() => setModalShow(false)} />
 
-                        {/* <li className="nav-item">
-                            <NavLink to='/logout'><Button className='nav-link'>Logout</Button></NavLink>
-                        </li>
-
                         <li className="nav-item">
-                            <NavLink to="/login"><Button className='nav-link'>Login</Button></NavLink>
-                        </li> */}
+                            <NavLink to='/recept'><Button className='nav-link'>Download Recept</Button></NavLink>
+                        </li>
 
 
                         {
                             isAuthenticated ? (
-                                // <button disabled={loading} onClick={logoutHandler} className='btn'>Logout</button>
-
                                 <li className="nav-item">
                                     <NavLink><Button onClick={logoutHandler} className='nav-link'>Logout</Button></NavLink>
                                 </li>
-
                             ) : (
-
                                 <li className="nav-item">
                                     <NavLink to="/login"><Button className='nav-link'>Login</Button></NavLink>
                                 </li>
-                                // <Link to={'/login'}>Login</Link>
                             )
                         }
 

@@ -115,7 +115,7 @@ const Form = () => {
             })
             .catch((err) => {
                 console.log("Error Occurred: " + err.message);
-                window.alert("Login First");
+                // window.alert("Login First");
 
                 toast.error('Login First', { theme: "dark" });
                 return;

@@ -36,6 +36,8 @@ import Login from "../pages/Auth/Login";
 import AdminLogin from "../pages/Auth/AdminLogin";
 import Logout from "../pages/Auth/Logout";
 
+import Recept from '../extra/Recept/recept';
+
 const routes = () => {
     return (
 
@@ -78,6 +80,8 @@ const routes = () => {
 
                 <Route path="/thanks" element={<Thanks />} />
                 <Route path="/*" element={<PageNot />} />
+
+                <Route path="/recept" element={<Recept/>} />
 
             </Routes>
             <Footer />
