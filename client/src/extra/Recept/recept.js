@@ -32,7 +32,7 @@ const AppointmentPage = () => {
 
       html2pdf()
         .set({
-          margin: 0.5,
+          margin: 0.0,
           filename: 'appointment_receipt.pdf',
           image: { type: 'jpeg', quality: 0.98 },
           html2canvas: { scale: 2, dpi: 300 },

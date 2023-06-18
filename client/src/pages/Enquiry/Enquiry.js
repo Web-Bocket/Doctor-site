@@ -171,4 +171,4 @@ const Enquiry = () => {
   )
 }
 
-export default Enquiry
+export default Enquiry;
