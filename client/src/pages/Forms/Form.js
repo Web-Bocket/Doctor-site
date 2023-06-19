@@ -3,13 +3,11 @@ import Button from 'react-bootstrap/esm/Button';
 import axios from 'axios';
 import './form.css';
 
-
 import { ToastContainer, toast, useToast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 
-import PhonePayQR from '../../assets/phonePayQR.jpg';
-import testQR from '../../assets/upi_test_qr.png';
+import onlineQR from '../../assets/upi_qr/upi_online.png';
 
 const Form = () => {
 
@@ -32,7 +30,7 @@ const Form = () => {
 
     const handleSubmit = () => {
 
-        if (!firstName || !lastName || !gender || !address || !city || !state || !mode || !doctor || !country || !problem) {
+        if (!firstName || !lastName || !gender || !address || !city || !mode ||  !state || !doctor || !country || !problem) {
             // window.alert("Please fill in all required fields.");
             toast.info('Please fill all the fields', {
                 position: "top-right",
@@ -201,7 +199,10 @@ const Form = () => {
                     </table>
                     {/* <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.</p> */}
                     {/* <img src='https://img.freepik.com/free-vector/flat-design-illustration-customer-support_23-2148887720.jpg' alt='contact img' /> */}
-                    <img src={testQR} alt='Phone Pay QR' />
+
+                    {/* I want to show two qr code if user select online mode then show online qr code and when user select offline mode then show offline qr code */}
+                    <img src={onlineQR} alt='Phone Pay QR' />
+
                 </div>
 
                 <div className='form_div_one'>
@@ -222,7 +223,7 @@ const Form = () => {
                         <select value={mode} onChange={(e) => setMode(e.target.value)}>
                             <option value="">Select Mode</option>
                             <option value="Online">Online</option>
-                            <option value="Offline">Offline</option>
+                            {/* <option value="Offline">Offline</option> */}
                         </select>
                     </label>
                     <input type='text' onChange={(e) => setDoctor(e.target.value)} placeholder='Select Doctor' />
@@ -237,8 +238,6 @@ const Form = () => {
                 </div>
 
             </div>
-
-
 
             <ToastContainer />
         </div>
