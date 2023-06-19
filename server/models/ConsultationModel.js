@@ -56,6 +56,10 @@ const consultationSchema = new mongoose.Schema({
     problem: {
         type: String,
         required: true
+    },
+    utr : {
+        type : String,
+        required : true
     }
 });
 

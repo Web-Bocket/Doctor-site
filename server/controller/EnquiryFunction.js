@@ -43,8 +43,6 @@ const EnquiryGetFun = async (req, res) => {
     }
 }
 
-
-
 const EnquiryDeleteFun = async (req, res) => {
     try {
         const enquiryId = req.params.id;

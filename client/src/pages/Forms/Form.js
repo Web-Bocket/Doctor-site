@@ -1,11 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from 'react-bootstrap/esm/Button';
 import axios from 'axios';
 import './form.css';
 
+
 import { ToastContainer, toast, useToast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+
+import PhonePayQR from '../../assets/phonePayQR.jpg';
+import testQR from '../../assets/upi_test_qr.png';
 
 const Form = () => {
 
@@ -23,6 +27,8 @@ const Form = () => {
     const [state, setState] = useState("");
     const [country, setCountry] = useState("");
     const [problem, setProblme] = useState("");
+    const [utr, setUTR] = useState("");
+
 
     const handleSubmit = () => {
 
@@ -91,6 +97,22 @@ const Form = () => {
             return;
         }
 
+
+        const utrValidation = /^\d{12}$/;
+        if (!utrValidation.test(utr)) {
+            toast.info('Please enter a valid 12-digit UPI Transaction ID', {
+                position: 'top-right',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'dark',
+            });
+            return;
+        }
+
         axios.post("http://localhost:5000/consultation", {
             firstName,
             lastName,
@@ -104,7 +126,8 @@ const Form = () => {
             doctor,
             state,
             country,
-            problem
+            problem,
+            utr
         }, { withCredentials: true })
             .then(() => {
                 navigate('/thanks');
@@ -120,12 +143,22 @@ const Form = () => {
                 toast.error('Login First', { theme: "dark" });
                 return;
             });
-
     }
 
     return (
         <div className='form_parent'>
             <h1>Fill Online Consultation Form</h1>
+
+            <div className='form_note'>
+                <h2>Note:-</ h2>
+                <ul>
+                    <li>First Pay the sum amount and keep UIP Transaction ID or UTR ready</li>
+                    <li>Now Fill the form with appropiate and correct information</li>
+                    <li>After Payment make sure to paste 12 digit UPI Transaction ID Or UTR on the required field.</li>
+                    <li>Don't use wrong phone number, other wise you will loose you change to get consultation</li>
+                    <li>So that our team will verify your payment.</li>
+                </ul>
+            </div>
 
             <div className='form_parent_down'>
 
@@ -167,7 +200,8 @@ const Form = () => {
 
                     </table>
                     {/* <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.</p> */}
-                    <img src='https://img.freepik.com/free-vector/flat-design-illustration-customer-support_23-2148887720.jpg' alt='contact img' />
+                    {/* <img src='https://img.freepik.com/free-vector/flat-design-illustration-customer-support_23-2148887720.jpg' alt='contact img' /> */}
+                    <img src={testQR} alt='Phone Pay QR' />
                 </div>
 
                 <div className='form_div_one'>
@@ -197,11 +231,15 @@ const Form = () => {
                     <input type='text' onChange={(e) => setCity(e.target.value)} placeholder='Enter Your City' />
                     <input type='text' onChange={(e) => setState(e.target.value)} placeholder='Enter Your State' />
                     <input type='text' onChange={(e) => setCountry(e.target.value)} placeholder='Enter Your Country' />
+                    <input type='text' onChange={(e) => setUTR(e.target.value)} placeholder='Enter UPI Transaction ID or UTR' />
                     <textarea rows="5" onChange={(e) => setProblme(e.target.value)} placeholder='Your query/health problem' />
                     <Button onClick={handleSubmit}>Send Details</Button>
                 </div>
 
             </div>
+
+
+
             <ToastContainer />
         </div>
     )

@@ -288,6 +288,7 @@ const Admin = () => {
                                                 <p>State : {consultation.state}</p>
                                                 <p>Country : {consultation.country}</p>
                                                 <p>Problem : {consultation.problem}</p>
+                                                <p>UPI Transaction ID OR UTR : {consultation.utr}</p>
                                                 <Button onClick={() => deleteConsultation(consultation._id)}>Delete Consultation Data</Button>
                                             </div>
                                         ))

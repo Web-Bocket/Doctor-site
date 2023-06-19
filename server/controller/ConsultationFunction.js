@@ -5,9 +5,9 @@ const PostConsultFunction = async (req, res) => {
 
     try {
 
-        const { firstName, lastName, email, phone, gender, age, address, city, mode, doctor, state, country, problem } = req.body;
+        const { firstName, lastName, email, phone, gender, age, address, city, mode, doctor, state, country, problem, utr } = req.body;
 
-        if (!firstName || !lastName || !email || !phone || !gender || !age || !address || !city || !mode || !doctor || !state || !country || !problem) {
+        if (!firstName || !lastName || !email || !phone || !gender || !age || !address || !city || !mode || !doctor || !state || !country || !problem || !utr) {
             return res.status(401).json({ message: "Please fill all the fields" });
         }
 
@@ -16,6 +16,8 @@ const PostConsultFunction = async (req, res) => {
         if (!phoneRegex.test(phone)) {
             return res.status(402).json({ error: "Please enter a valid phone number" });
         }
+
+        console.log(utr);
 
         const consultation = new ConsultationModel({
             firstName,
@@ -30,6 +32,7 @@ const PostConsultFunction = async (req, res) => {
             doctor,
             state,
             country,
+            utr,
             problem
         });
 

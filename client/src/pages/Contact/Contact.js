@@ -3,10 +3,6 @@ import './contact.css';
 
 const Contact = () => {
 
-
-
-
-
   return (
     <div className='parent_contact'>
       <div className='text_contact'>

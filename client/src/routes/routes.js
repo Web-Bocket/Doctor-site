@@ -38,6 +38,8 @@ import Logout from "../pages/Auth/Logout";
 
 import Recept from '../extra/Recept/recept';
 
+import Payment from '../payment/Payment';
+
 const routes = () => {
     return (
 
@@ -82,6 +84,8 @@ const routes = () => {
                 <Route path="/*" element={<PageNot />} />
 
                 <Route path="/recept" element={<Recept/>} />
+
+                <Route path="/payment" element={<Payment /> } />
 
             </Routes>
             <Footer />
