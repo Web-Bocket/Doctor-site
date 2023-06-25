@@ -1,12 +1,19 @@
 import React from 'react';
 import './contact.css';
 
+import clinicImg from '../../assets/doc/doc_seventeen.jpg';
+import doctorImg from '../../assets/doc/doc_nine.jpg';
+
 const Contact = () => {
 
   return (
     <div className='parent_contact'>
       <div className='text_contact'>
         <h1>CONTACT DETAILS</h1>
+        <div className='contact_docImg_div'>
+          <img src={clinicImg} />
+          <img src={doctorImg} />
+        </div>
         <div className='contact_number_div'>
           <p>Dr. Anubha's Homeopathy Clinic, H.No: 10-3-505, Vijayanagar Colony, Lane beside Andhra Bank, Masabtank, Hyderabad - 500057.</p>
           <div className='link_div'>

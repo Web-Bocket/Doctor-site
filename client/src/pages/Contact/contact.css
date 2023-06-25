@@ -20,7 +20,7 @@
 }
 
 .text_contact {
-    width: 40%;
+    width: 50%;
     /* background-color: pink; */
     margin: 20px;
 }
@@ -34,11 +34,20 @@
     margin: 20px;
 }
 
-.map_contact iframe{
+.map_contact iframe {
     height: 500px;
     border: 5px solid #0077b6;
     margin-top: 10px;
     border-radius: 20px 0px 20px 0px;
+}
+
+.contact_docImg_div {
+    display: flex;
+}
+
+.contact_docImg_div img {
+    width: 50%;
+    padding: 5px;
 }
 
 .contact_number_div {
@@ -85,13 +94,13 @@
         align-items: center;
         flex-direction: column;
     }
-    
+
     .text_contact {
         width: 90%;
         /* background-color: pink; */
         margin: 20px;
     }
-    
+
     .map_contact {
         display: flex;
         align-self: center;
