@@ -1,9 +1,8 @@
 const EnquiryModel = require('../models/EnquiryModel');
 
-
 const EnquiryPostFun = async (req, res) => {
 
-    const { yourName, phone, email, problem } = req.body;
+    const { yourName, phone, email, problem, date } = req.body;
 
     if (!yourName || !phone || !email || !problem) {
         return res.status(401).json({ message: "Please fill all the fields" });
@@ -19,7 +18,8 @@ const EnquiryPostFun = async (req, res) => {
         yourName,
         phone,
         email,
-        problem
+        problem,
+        date
     })
 
     const EnquiryData = await newEnquiry.save();
@@ -33,11 +33,9 @@ const EnquiryPostFun = async (req, res) => {
 }
 
 const EnquiryGetFun = async (req, res) => {
-
     try {
         const EnquiryData = await EnquiryModel.find();
         res.status(200).send(EnquiryData);
-
     } catch (error) {
         console.log("Error while getting the Enquiry Data" + error);
     }

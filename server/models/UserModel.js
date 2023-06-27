@@ -10,6 +10,7 @@ const mongoose = require("mongoose");
 // Blood group
 // Disease
 // Patient category 
+// Date 
 
 
 const userScheme = new mongoose.Schema({
@@ -61,10 +62,13 @@ const userScheme = new mongoose.Schema({
     password: {
         type: String,
         required: true
+    },
+    date: {
+        type: Date,
+        required: false,
+        default: Date.now
     }
 });
-
-
 
 const User = mongoose.model("User", userScheme);
 module.exports = User;

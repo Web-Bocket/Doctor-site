@@ -17,7 +17,8 @@ const RegisterFunction = async (req, res) => {
             bloodGroup,
             diseases,
             category,
-            password
+            password,
+            date
         } = req.body;
 
         if (
@@ -58,9 +59,9 @@ const RegisterFunction = async (req, res) => {
             bloodGroup,
             diseases,
             category,
-            password: hashedPassword
+            password: hashedPassword,
+            date
         });
-
 
         const token = jwt.sign({ _id: user._id }, process.env.SECRET);
         console.log(token);
@@ -72,7 +73,6 @@ const RegisterFunction = async (req, res) => {
             success: true,
             message: "User registered successfully"
         });
-
 
     } catch (error) {
         console.log("This is the register error " + error);
@@ -136,7 +136,6 @@ const LoginFunction = async (req, res) => {
         });
     }
 };
-
 
 
 // LOGOUT User

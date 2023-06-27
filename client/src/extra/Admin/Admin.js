@@ -14,18 +14,26 @@ const Admin = () => {
     const [blogs, setBlogData] = useState([]);
     const [users, setUser] = useState([]);
 
-    // This is for the Search feature by data
-    const [searchDate, setSearchDate] = useState('');
-
-    // This is for the Search consultation by the mode 
-    const [searchMode, setSearchMode] = useState('');
-
 
     // This is for the Blog Post
     const [blogTitle, setBlogTitle] = useState("");
     const [blogPerson, setBlogPerson] = useState("");
     const [blogImage, setBlogImage] = useState("");
     const [blogDescription, setBlogDescription] = useState("");
+
+    // This is for the Search feature by data
+    const [searchDate, setSearchDate] = useState('');
+
+    // This is for the Search consultation by the mode 
+    const [searchMode, setSearchMode] = useState('');
+
+    // This is for the user search by date
+    const [userSearch, setUserSearch] = useState('');
+
+    // This is for the enquiry Search
+    const [enquirySearch, setEnquirySearch] = useState('');
+
+
 
     useEffect(() => {
         axios.get('http://localhost:5000/appointment', {
@@ -37,10 +45,7 @@ const Admin = () => {
             .catch(error => {
                 console.log('Error fetching appointments:', error);
             });
-        // }, []);
 
-
-        // useEffect(() => {
         axios.get('http://localhost:5000/consultation', {
             withCredentials: true,
         })
@@ -50,10 +55,7 @@ const Admin = () => {
             .catch(error => {
                 console.log('Error fetching Consultation:', error);
             });
-        // }, []);
 
-
-        // useEffect(() => {
         axios.get('http://localhost:5000/enquiry', {
             withCredentials: true,
         })
@@ -63,10 +65,7 @@ const Admin = () => {
             .catch(error => {
                 console.log('Error fetching Enquiry Data:', error);
             });
-        // }, []);
 
-
-        // useEffect(() => {
         axios.get('http://localhost:5000/blog', {
             withCredentials: true,
         })
@@ -89,7 +88,6 @@ const Admin = () => {
             });
 
     }, []);
-
 
     const handleSubmitBlog = () => {
 
@@ -120,7 +118,6 @@ const Admin = () => {
         })
     }
 
-
     const deleteBlog = async (blogId) => {
         try {
             const response = await axios.delete(`http://localhost:5000/blog/${blogId}`);
@@ -131,7 +128,6 @@ const Admin = () => {
         }
     }
 
-
     const deleteConsultation = async (ConsultationId) => {
         try {
             const response = await axios.delete(`http://localhost:5000/consultation/${ConsultationId}`);
@@ -141,7 +137,6 @@ const Admin = () => {
             console.log("Error while deleting the Consultation Data" + error);
         }
     }
-
 
     const deleteAppointment = async (appointmentId) => {
         try {
@@ -173,16 +168,27 @@ const Admin = () => {
         }
     }
 
+
+
+    // Filter Appointment Using the Date
     const filteredAppointments = appointments.filter((appointment) =>
         appointment.date?.includes(searchDate)
     );
 
-    // THis
+    // User filter using date
+    const searchedUsers = users.filter((user) => {
+        return user.date?.includes(userSearch);
+    });
+
+    // Enqiury  filter using date
+    const searchedEnqiry = enquirys.filter((enquiry) => {
+        return enquiry.date?.includes(enquirySearch);
+    });
+
+    // This is of the filter Consultations
     const filteredConsultations = consultations.filter((consultation) =>
         consultation.mode?.toLowerCase().includes(searchMode.toLowerCase())
     );
-
-
 
     return (
         <div className='tab_parent'>
@@ -191,9 +197,6 @@ const Admin = () => {
                 <Row>
                     <Col className='right_tab' sm={3}>
                         <Nav variant="pills" className="flex-column">
-                            {/* <Nav.Item>
-                                <Nav.Link className='nav_link_tab' eventKey="first">Dashboard</Nav.Link>
-                            </Nav.Item> */}
                             <Nav.Item>
                                 <Nav.Link eventKey="first">Patient Enquiry</Nav.Link>
                             </Nav.Item>
@@ -216,22 +219,34 @@ const Admin = () => {
                     </Col>
                     <Col className='left_tab' sm={9}>
                         <Tab.Content>
-                            {/* <Tab.Pane eventKey="first">
-                                <p>This is the Tab One</p>
-                            </Tab.Pane> */}
+
                             <Tab.Pane eventKey="first">
-                                <div>
-                                    {enquirys.map(enquiry => (
-                                        <div className='appointment_one_data' key={enquiry._id}>
-                                            <p>Name : {enquiry.yourName}</p>
-                                            <p>Phone : {enquiry.phone}</p>
-                                            <p>Email : {enquiry.email}</p>
-                                            <p>Problem : {enquiry.problem}</p>
-                                            <Button onClick={() => deleteEnquiry(enquiry._id)}>Delete Enquiry Data</Button>
-                                        </div>
-                                    ))}
+
+                                <div className='appointment_one_data'>
+                                    Search User By Date:
+                                    <input type="date" value={enquirySearch} onChange={(e) => setEnquirySearch(e.target.value)} />
                                 </div>
+
+                                <div>
+                                    {searchedEnqiry.length > 0 ? (
+                                        searchedEnqiry.map(enquiry => (
+                                            <div className='appointment_one_data' key={enquiry._id}>
+                                                <p>Name: {enquiry.yourName}</p>
+                                                <p>Phone: {enquiry.phone}</p>
+                                                <p>Email: {enquiry.email}</p>
+                                                <p>Problem: {enquiry.problem}</p>
+                                                <p>Date: {new Date(enquiry.date).toLocaleDateString()}</p>
+                                                <Button onClick={() => deleteEnquiry(enquiry._id)}>Delete Enquiry Data</Button>
+                                            </div>
+                                        ))
+                                    ) : (
+                                        <p>No Enqiury on this Date.</p>
+                                    )}
+                                </div>
+
                             </Tab.Pane>
+
+
                             <Tab.Pane eventKey="third">
                                 <div className='appointment_one_data'>
 
@@ -241,7 +256,7 @@ const Admin = () => {
 
                                 <div>
                                     {filteredAppointments.length === 0 ? (
-                                        <p>No Result found</p>
+                                        <p>No Appointment Booked on this Date</p>
                                     ) : (
                                         filteredAppointments.map(appointment => (
                                             <div className='appointment_one_data' key={appointment._id}>
@@ -272,7 +287,6 @@ const Admin = () => {
                                     {filteredConsultations.length === 0 ? (
                                         <p>No Result found</p>
                                     ) : (
-
                                         filteredConsultations.map(consultation => (
                                             <div className='appointment_one_data' key={consultation._id}>
                                                 <p>First Name : {consultation.firstName}</p>
@@ -301,7 +315,6 @@ const Admin = () => {
                                         <div className='appointment_one_data' key={blog._id}>
                                             <p>Title : {blog.blogTitle}</p>
                                             <img src={blog.blogImage} alt="blog img" />
-                                            {/* <p>Image Url : {blog.blogImage}</p> */}
                                             <p>Person by : {blog.blogPerson}</p>
                                             <p>Description : {blog.blogDescription}</p>
                                             <Button onClick={() => deleteBlog(blog._id)}>Delete Blog</Button>
@@ -322,25 +335,38 @@ const Admin = () => {
                                 </div>
                             </Tab.Pane>
                         </Tab.Content>
+
+
                         <Tab.Pane eventKey="seven">
-                            <div>
-                                {users.map(user => (
-                                    <div className='appointment_one_data' key={user._id}>
-                                        <p>Patient Name : {user.patientName}</p>
-                                        <p>Patient Code : {user.patientCode}</p>
-                                        <p>City : {user.city}</p>
-                                        <p>Photo : {user.photo}</p>
-                                        <p>Mobile No : {user.mobileNumber}</p>
-                                        <p>Email : {user.email}</p>
-                                        <p>State : {user.state}</p>
-                                        <p>Pin No : {user.pinNo}</p>
-                                        <p>Blood Group : {user.bloodGroup}</p>
-                                        <p>Disease : {user.diseases}</p>
-                                        <p>Category : {user.category}</p>
-                                        <Button onClick={() => deleteUser(user._id)}>Delete Blog</Button>
-                                    </div>
-                                ))}
+                            <div className='appointment_one_data'>
+                                Search User By Date:
+                                <input type="date" value={userSearch} onChange={(e) => setUserSearch(e.target.value)} />
                             </div>
+
+                            <div>
+                                {searchedUsers.length > 0 ? (
+                                    searchedUsers.map((user) => (
+                                        <div className='appointment_one_data' key={user._id}>
+                                            <p>Patient Name: {user.patientName}</p>
+                                            <p>Patient Code: {user.patientCode}</p>
+                                            <p>City: {user.city}</p>
+                                            <p>Photo: {user.photo}</p>
+                                            <p>Mobile No: {user.mobileNumber}</p>
+                                            <p>Email: {user.email}</p>
+                                            <p>State: {user.state}</p>
+                                            <p>Pin No: {user.pinNo}</p>
+                                            <p>Blood Group: {user.bloodGroup}</p>
+                                            <p>Disease: {user.diseases}</p>
+                                            <p>Category: {user.category}</p>
+                                            <p>Account Created: {new Date(user.date).toLocaleDateString()}</p>
+                                            <Button onClick={() => deleteUser(user._id)}>Delete User</Button>
+                                        </div>
+                                    ))
+                                ) : (
+                                    <p>No User Account Create at this date</p>
+                                )}
+                            </div>
+
                         </Tab.Pane>
                     </Col>
                 </Row>

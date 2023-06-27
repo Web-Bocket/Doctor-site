@@ -17,6 +17,11 @@ const enquirySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  date: {
+    type: Date,
+    required: false,
+    default: Date.now
+  }
 });
 
 const Enquiry = mongoose.model('Enquiry', enquirySchema);
